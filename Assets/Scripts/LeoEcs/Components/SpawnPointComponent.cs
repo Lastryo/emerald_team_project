@@ -15,9 +15,9 @@ namespace Client
 
         public Transform point;
         public GameObject prefab;
-        public void SetOwner(in EcsEntity entity)
+        public void SetOwner(in EcsEntity entity, out IComponent component)
         {
-            entity.Get<SpawnPointComponent>() = this;
+            component = entity.Get<SpawnPointComponent>() = this;
         }
     }
 }

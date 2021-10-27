@@ -14,7 +14,12 @@ namespace Client
         public Animator animator;
         public void SetOwner(in EcsEntity entity)
         {
-            entity.Get<AnimationComponent>() = this;
+
+        }
+
+        public void SetOwner(in EcsEntity entity, out IComponent component)
+        {
+            component = entity.Get<AnimationComponent>() = this;
         }
     }
 }

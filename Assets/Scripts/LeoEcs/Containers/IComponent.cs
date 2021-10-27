@@ -4,6 +4,6 @@ namespace Client
 {
     public interface IComponent
     {
-        void SetOwner(in EcsEntity entity);
+        void SetOwner(in EcsEntity entity, out IComponent component);
     }
 }

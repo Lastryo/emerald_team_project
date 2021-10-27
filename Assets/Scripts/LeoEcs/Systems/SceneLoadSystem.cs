@@ -2,6 +2,7 @@ using Leopotam.Ecs;
 using Leopotam.Ecs.Ui.Components;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static SceneManagementScriptable;
 
 namespace Client
 {
@@ -21,30 +22,20 @@ namespace Client
 
         private async void LoadMainMenu()
         {
-            int c = SceneManager.sceneCount;
-            for (int i = c - 1; i > 0; i--)
-            {
-                Scene scene = SceneManager.GetSceneAt(i);
-                if (scene.name != "Main")
-                    await _sceneData.UnloadScene(scene.name);
-            }
-            await _sceneData.LoadScene("Loading", LoadSceneMode.Additive);
-            await _sceneData.LoadScene("MainMenu", LoadSceneMode.Additive);
-            await _sceneData.UnloadScene("Loading");
+            await _sceneData.UnloadScenes();
+
+            await _sceneData.LoadScene(SceneType.Loading, LoadSceneMode.Additive);
+            await _sceneData.LoadScene(SceneType.MainMenu, LoadSceneMode.Additive);
+            await _sceneData.UnloadScene(SceneType.Loading);
         }
 
         private async void LoadNewGame()
         {
-            int c = SceneManager.sceneCount;
-            for (int i = c - 1; i > 0; i--)
-            {
-                Scene scene = SceneManager.GetSceneAt(i);
-                if (scene.name != "Main")
-                    await _sceneData.UnloadScene(scene.name);
-            }
-            await _sceneData.LoadScene("Loading", LoadSceneMode.Additive);
-            await _sceneData.LoadScene("Level", LoadSceneMode.Additive, true);
-            await _sceneData.UnloadScene("Loading");
+            await _sceneData.UnloadScenes();
+
+            await _sceneData.LoadScene(SceneType.Loading, LoadSceneMode.Additive);
+            await _sceneData.LoadScene(SceneType.Game, LoadSceneMode.Additive, true);
+            await _sceneData.UnloadScene(SceneType.Loading);
         }
 
         public void Run()

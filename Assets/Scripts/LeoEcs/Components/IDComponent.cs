@@ -6,9 +6,9 @@ namespace Client
     {
         public string id;
 
-        public void SetOwner(in EcsEntity entity)
+        public void SetOwner(in EcsEntity entity, out IComponent component)
         {
-            entity.Get<IDComponent>() = this;
+            component = entity.Get<IDComponent>() = this;
         }
     }
 }

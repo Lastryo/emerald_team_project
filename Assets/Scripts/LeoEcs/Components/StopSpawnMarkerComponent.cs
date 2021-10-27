@@ -10,9 +10,9 @@ namespace Client
         [ShowInInspector]
         public string Doc => "Компонент который отвечает за...";
 #endif
-        public void SetOwner(in EcsEntity entity)
+        public void SetOwner(in EcsEntity entity, out IComponent component)
         {
-            entity.Get<StopSpawnMarkerComponent>() = this;
+            component = entity.Get<StopSpawnMarkerComponent>() = this;
         }
     }
 }

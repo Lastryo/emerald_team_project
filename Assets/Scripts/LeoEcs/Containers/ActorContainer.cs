@@ -20,10 +20,10 @@ public class ActorContainer : SerializedMonoBehaviour
     public void Initialize()
     {
         Entity = EcsStartup.NewEntity(name);
-        foreach (var item in component)
+        for (int i = 0; i < component.Length; i++)
         {
-            item?.SetOwner(Entity);
-            if (item is IHaveEntity haveEntity)
+            component[i]?.SetOwner(Entity, out component[i]);
+            if (component[i] is IHaveEntity haveEntity)
                 haveEntity.Entity = Entity;
         }
 

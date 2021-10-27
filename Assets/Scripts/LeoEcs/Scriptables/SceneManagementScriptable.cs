@@ -10,38 +10,43 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(fileName = "SceneData", menuName = "ScriptableObjects/SceneManagement")]
 public class SceneManagementScriptable : ScriptableObject
 {
-    //public AssetReference scene;
     public SceneData[] scenes;
 
-    public async Task LoadScene(string sceneName, LoadSceneMode mode, bool isMain = false)
+    public async Task LoadScene(SceneType type, LoadSceneMode mode, bool isMain = false)
     {
-        var neededScene = scenes.FirstOrDefault(s => s.name == sceneName);
+        var neededScene = scenes.FirstOrDefault(s => s.type == type);
         var asset = await neededScene.sceneAsset.LoadSceneAsync(mode, true).Task;
         if (isMain)
             SceneManager.SetActiveScene(asset.Scene);
     }
 
-    public Task UnloadScene(string sceneName)
+    public Task UnloadScene(SceneType type)
     {
-        var neededScene = scenes.FirstOrDefault(s => s.name == sceneName);
+        var neededScene = scenes.FirstOrDefault(s => s.type == type);
         return neededScene.sceneAsset.UnLoadScene().Task;
+    }
+
+    public async Task UnloadScenes()
+    {
+        foreach (var item in scenes)
+        {
+            if (item.sceneAsset.IsValid())
+                await item.sceneAsset.UnLoadScene().Task;
+        }
     }
 
     [Serializable]
     public struct SceneData
     {
-#if UNITY_EDITOR
-        private void AddName()
-        {
-            name = sceneAsset.editorAsset.name;
-        }
-        [OnValueChanged("AddName")]
-#endif
         public AssetReference sceneAsset;
+        public SceneType type;
+    }
 
-        [ReadOnly]
-        public string name;
+    public enum SceneType
+    {
 
-
+        Loading,
+        MainMenu,
+        Game
     }
 }
