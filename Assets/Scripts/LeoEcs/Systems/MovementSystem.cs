@@ -7,6 +7,7 @@ sealed class MovementSystem : IEcsRunSystem
     // auto-injected fields.
     readonly EcsWorld _world = null;
     private EcsFilter<TopDownControllerComponent> characterFilter = null;
+    private int animationMoveId = Animator.StringToHash("Forward");
 
     public void Run()
     {
@@ -29,6 +30,7 @@ sealed class MovementSystem : IEcsRunSystem
         foreach (var character in characterFilter)
         {
             ref var moveComponent = ref characterFilter.Get1(character);
+            ref var characterEntity = ref characterFilter.GetEntity(character);
             if (!moveComponent.isMoving)
             {
                 moveComponent.isMoving = true;
@@ -40,6 +42,11 @@ sealed class MovementSystem : IEcsRunSystem
             var transform = moveComponent.Transform;
 
             agent.Move(transform.forward * moveComponent.MoveSpeed * Time.deltaTime);
+            if (characterEntity.Has<AnimationComponent>())
+            {
+                characterEntity.Get<AnimationComponent>().animator.SetFloat(animationMoveId, moveComponent.InputMoveDirection.sqrMagnitude);
+            }
+
             moveComponent.isMoving = true;
             Rotate(transform, moveDirection);
         }
@@ -56,6 +63,11 @@ sealed class MovementSystem : IEcsRunSystem
         foreach (var character in characterFilter)
         {
             ref var moveComponent = ref characterFilter.Get1(character);
+            ref var characterEntity = ref characterFilter.GetEntity(character);
+            if (characterEntity.Has<AnimationComponent>())
+            {
+                characterEntity.Get<AnimationComponent>().animator.SetFloat(animationMoveId, moveComponent.InputMoveDirection.sqrMagnitude);
+            }
             moveComponent.isMoving = false;
         }
     }

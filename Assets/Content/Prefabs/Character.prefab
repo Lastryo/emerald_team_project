@@ -55,6 +55,7 @@ MonoBehaviour:
     - {fileID: 3524965606532247802}
     - {fileID: 5116558644766015640}
     - {fileID: 5815340220621032558}
+    - {fileID: 2012467999734954911}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -65,7 +66,7 @@ MonoBehaviour:
       Data: 0|Client.IComponent[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 1|Client.TopDownControllerComponent, Assembly-CSharp
@@ -83,10 +84,7 @@ MonoBehaviour:
       Data: 5
     - Name: InputMoveDirection
       Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
       Data: 0
@@ -99,6 +97,15 @@ MonoBehaviour:
     - Name: isMoving
       Entry: 5
       Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|Client.AnimationComponent, Assembly-CSharp
+    - Name: animator
+      Entry: 10
+      Data: 3
     - Name: 
       Entry: 8
       Data: 
@@ -167,6 +174,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5116558644766015640}
     m_Modifications:
+    - target: {fileID: 407388191254426671, guid: 4e582e07d6d201142863b922e72fa9f4,
+        type: 3}
+      propertyPath: m_AABB.m_Center.x
+      value: -0.005424857
+      objectReference: {fileID: 0}
+    - target: {fileID: 407388191254426671, guid: 4e582e07d6d201142863b922e72fa9f4,
+        type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: 0.10448936
+      objectReference: {fileID: 0}
+    - target: {fileID: 407388191254426671, guid: 4e582e07d6d201142863b922e72fa9f4,
+        type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: 0.9336667
+      objectReference: {fileID: 0}
+    - target: {fileID: 407388191254426671, guid: 4e582e07d6d201142863b922e72fa9f4,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 0.34894526
+      objectReference: {fileID: 0}
+    - target: {fileID: 407388191254426671, guid: 4e582e07d6d201142863b922e72fa9f4,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 0.07220876
+      objectReference: {fileID: 0}
+    - target: {fileID: 407388191254426671, guid: 4e582e07d6d201142863b922e72fa9f4,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.42279804
+      objectReference: {fileID: 0}
     - target: {fileID: 1446888015778530702, guid: 4e582e07d6d201142863b922e72fa9f4,
         type: 3}
       propertyPath: m_RootOrder
@@ -227,11 +264,47 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_FurryS2_SourceMesh
       objectReference: {fileID: 0}
+    - target: {fileID: 8102067298554958374, guid: 4e582e07d6d201142863b922e72fa9f4,
+        type: 3}
+      propertyPath: m_AABB.m_Center.x
+      value: -0.0023312569
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102067298554958374, guid: 4e582e07d6d201142863b922e72fa9f4,
+        type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: 0.0048166364
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102067298554958374, guid: 4e582e07d6d201142863b922e72fa9f4,
+        type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: 0.606188
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102067298554958374, guid: 4e582e07d6d201142863b922e72fa9f4,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 0.15934971
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102067298554958374, guid: 4e582e07d6d201142863b922e72fa9f4,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 0.18601526
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102067298554958374, guid: 4e582e07d6d201142863b922e72fa9f4,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.48709244
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e582e07d6d201142863b922e72fa9f4, type: 3}
 --- !u!4 &6815929983753736323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1446888015778530702, guid: 4e582e07d6d201142863b922e72fa9f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5369254792200492301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2012467999734954911 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5867860677932510866, guid: 4e582e07d6d201142863b922e72fa9f4,
     type: 3}
   m_PrefabInstance: {fileID: 5369254792200492301}
   m_PrefabAsset: {fileID: 0}
