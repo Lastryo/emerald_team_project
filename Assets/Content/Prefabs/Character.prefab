@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5116558644766015640}
   - component: {fileID: 523861822998060}
+  - component: {fileID: 1948375226291126300}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -47,7 +48,9 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 5116558644766015640}
+    - {fileID: 1948375226291126300}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -63,11 +66,11 @@ MonoBehaviour:
       Entry: 7
       Data: 1|Client.TopDownControllerComponent, Assembly-CSharp
     - Name: Transform
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: characterController
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: InputMoveDirection
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
@@ -85,31 +88,31 @@ MonoBehaviour:
       Data: 
     - Name: UpdateMode
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: VelocityTransferMethod
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: ObstaclesLayerMask
       Entry: 7
       Data: UnityEngine.LayerMask, UnityEngine.CoreModule
     - Name: 
       Entry: 3
-      Data: 0
+      Data: 1254144
     - Name: 
       Entry: 8
       Data: 
     - Name: GroundedRaycastLength
       Entry: 4
-      Data: 0
+      Data: 5
     - Name: MinimumGroundedDistance
       Entry: 4
-      Data: 0
+      Data: 0.2
     - Name: ImpactFalloff
       Entry: 4
-      Data: 0
+      Data: 5
     - Name: PushPower
       Entry: 4
-      Data: 0
+      Data: 50
     - Name: GroundNormalHeightThreshold
       Entry: 4
       Data: 0
@@ -117,7 +120,127 @@ MonoBehaviour:
       Entry: 4
       Data: 0
     - Name: SlopeSpeedMultiplier
-      Entry: 6
+      Entry: 7
+      Data: 2|UnityEngine.AnimationCurve, UnityEngine.CoreModule
+    - Name: 
+      Entry: 7
+      Data: 3|UnityEngine.Keyframe[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Keyframe, UnityEngine.CoreModule
+    - Name: ver
+      Entry: 3
+      Data: 1
+    - Name: m_Time
+      Entry: 4
+      Data: -90
+    - Name: m_Value
+      Entry: 4
+      Data: 1
+    - Name: m_InTangent
+      Entry: 4
+      Data: 4.82659743E-06
+    - Name: m_OutTangent
+      Entry: 4
+      Data: 4.82659743E-06
+    - Name: m_TangentMode
+      Entry: 3
+      Data: 34
+    - Name: m_WeightedMode
+      Entry: 3
+      Data: 0
+    - Name: m_InWeight
+      Entry: 4
+      Data: 0
+    - Name: m_OutWeight
+      Entry: 4
+      Data: 0.333333343
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Keyframe, UnityEngine.CoreModule
+    - Name: ver
+      Entry: 3
+      Data: 1
+    - Name: m_Time
+      Entry: 4
+      Data: 0.0257087722
+    - Name: m_Value
+      Entry: 4
+      Data: 1.00043452
+    - Name: m_InTangent
+      Entry: 4
+      Data: -2.85002013E-08
+    - Name: m_OutTangent
+      Entry: 4
+      Data: -2.85002013E-08
+    - Name: m_TangentMode
+      Entry: 3
+      Data: 0
+    - Name: m_WeightedMode
+      Entry: 3
+      Data: 0
+    - Name: m_InWeight
+      Entry: 4
+      Data: 0.0464617573
+    - Name: m_OutWeight
+      Entry: 4
+      Data: 0.05862255
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Keyframe, UnityEngine.CoreModule
+    - Name: ver
+      Entry: 3
+      Data: 1
+    - Name: m_Time
+      Entry: 4
+      Data: 90
+    - Name: m_Value
+      Entry: 4
+      Data: 0
+    - Name: m_InTangent
+      Entry: 4
+      Data: -0.004225403
+    - Name: m_OutTangent
+      Entry: 4
+      Data: -0.004225403
+    - Name: m_TangentMode
+      Entry: 3
+      Data: 0
+    - Name: m_WeightedMode
+      Entry: 3
+      Data: 0
+    - Name: m_InWeight
+      Entry: 4
+      Data: 0.05082281
+    - Name: m_OutWeight
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
       Data: 
     - Name: GroundNormal
       Entry: 7
@@ -127,7 +250,7 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 4
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 4
       Data: 0
@@ -136,25 +259,25 @@ MonoBehaviour:
       Data: 
     - Name: SlideOnSteepSurfaces
       Entry: 5
-      Data: false
+      Data: true
     - Name: SlidingSpeed
       Entry: 4
-      Data: 0
+      Data: 15
     - Name: SlidingSpeedControl
       Entry: 4
-      Data: 0
+      Data: 0.4
     - Name: SlidingDirectionControl
       Entry: 4
-      Data: 0
+      Data: 1
     - Name: Gravity
       Entry: 4
-      Data: 0
+      Data: 40
     - Name: GravityActive
       Entry: 5
-      Data: false
+      Data: true
     - Name: CrouchedRaycastLengthMultiplier
       Entry: 4
-      Data: 0
+      Data: 1
     - Name: PerformCardinalObstacleRaycastDetection
       Entry: 5
       Data: false
@@ -220,7 +343,7 @@ MonoBehaviour:
       Data: 
     - Name: Grounded
       Entry: 5
-      Data: false
+      Data: true
     - Name: JustGotGrounded
       Entry: 5
       Data: false
@@ -274,7 +397,7 @@ MonoBehaviour:
       Data: 
     - Name: FreeMovement
       Entry: 5
-      Data: false
+      Data: true
     - Name: positionLastFrame
       Entry: 7
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
@@ -803,3 +926,21 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+--- !u!143 &1948375226291126300
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5907156295787677415}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}

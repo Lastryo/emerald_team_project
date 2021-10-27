@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 262.3369, g: 325.0498, b: 430.21924, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -217,6 +217,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!143 &1373240094 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 1948375226291126300, guid: 59e60e17be98f7849af610bd5412e407,
+    type: 3}
+  m_PrefabInstance: {fileID: 1827399074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1373240096 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5116558644766015640, guid: 59e60e17be98f7849af610bd5412e407,
+    type: 3}
+  m_PrefabInstance: {fileID: 1827399074}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1624157082
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,3 +313,151 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1827399074
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 523861822998060, guid: 59e60e17be98f7849af610bd5412e407, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 523861822998060, guid: 59e60e17be98f7849af610bd5412e407,
+        type: 3}
+    - target: {fileID: 523861822998060, guid: 59e60e17be98f7849af610bd5412e407, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 523861822998060, guid: 59e60e17be98f7849af610bd5412e407, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[0]
+      value: '"path":"component.[0]","value":{"$id":0,"$type":"Client.TopDownControllerComponent,
+        Assembly-CSharp","Transform":$eref:0,"characterController":$eref:1,"InputMoveDirection":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"UpdateMode":1,"VelocityTransferMethod":2,"ObstaclesLayerMask":{"$type":"UnityEngine.LayerMask,
+        UnityEngine.CoreModule",1254144},"GroundedRaycastLength":5,"MinimumGroundedDistance":0.2,"ImpactFalloff":5,"PushPower":50,"GroundNormalHeightThreshold":0,"MaximumFallSpeed":0,"SlopeSpeedMultiplier":{"$id":1,"$type":"UnityEngine.AnimationCurve,
+        UnityEngine.CoreModule",{"$id":2,"$type":"UnityEngine.Keyframe[], UnityEngine.CoreModule","$rlength":3,"$rcontent":[{"$type":"UnityEngine.Keyframe,
+        UnityEngine.CoreModule","ver":1,"m_Time":-90,"m_Value":1,"m_InTangent":4.82659743E-06,"m_OutTangent":4.82659743E-06,"m_TangentMode":34,"m_WeightedMode":0,"m_InWeight":0,"m_OutWeight":0.333333343},{"$type":"UnityEngine.Keyframe,
+        UnityEngine.CoreModule","ver":1,"m_Time":0.0257087722,"m_Value":1.00043452,"m_InTangent":-2.85002013E-08,"m_OutTangent":-2.85002013E-08,"m_TangentMode":0,"m_WeightedMode":0,"m_InWeight":0.0464617573,"m_OutWeight":0.05862255},{"$type":"UnityEngine.Keyframe,
+        UnityEngine.CoreModule","ver":1,"m_Time":90,"m_Value":0,"m_InTangent":-0.004225403,"m_OutTangent":-0.004225403,"m_TangentMode":0,"m_WeightedMode":0,"m_InWeight":0.05082281,"m_OutWeight":0}]},8,8},"GroundNormal":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,1,0},"SlideOnSteepSurfaces":true,"SlidingSpeed":15,"SlidingSpeedControl":0.4,"SlidingDirectionControl":1,"Gravity":40,"GravityActive":true,"CrouchedRaycastLengthMultiplier":1,"PerformCardinalObstacleRaycastDetection":false,"Speed":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"Velocity":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"VelocityLastFrame":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"Acceleration":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"Grounded":true,"JustGotGrounded":false,"CurrentMovement":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"CurrentDirection":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"Friction":0,"AddedForce":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"FreeMovement":true,"positionLastFrame":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"speedComputation":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"groundedLastFrame":false,"impact":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"smallValue":0,"lastGroundNormal":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"pushedRigidbody":null,"pushDirection":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"movingPlatformHitCollider":null,"movingPlatformCurrentHitCollider":null,"movingPlatformCurrentHitColliderLocal":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"movingPlatformCurrentGlobalPoint":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"movingPlatformLocalRotation":{"$type":"UnityEngine.Quaternion,
+        UnityEngine.CoreModule",0,0,0,0},"movingPlatformGlobalRotation":{"$type":"UnityEngine.Quaternion,
+        UnityEngine.CoreModule",0,0,0,0},"lastMovingPlatformMatrix":{"$type":"UnityEngine.Matrix4x4,
+        UnityEngine.CoreModule","m00":0,"m10":0,"m20":0,"m30":0,"m01":0,"m11":0,"m21":0,"m31":0,"m02":0,"m12":0,"m22":0,"m32":0,"m03":0,"m13":0,"m23":0,"m33":0},"movingPlatformVelocity":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"newMovingPlatform":false,"collisionFlags":0,"frameVelocity":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"hitPoint":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"lastHitPoint":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"newVelocity":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"lastHorizontalVelocity":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"newHorizontalVelocity":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"motion":{"$type":"UnityEngine.Vector3, UnityEngine.CoreModule",0,0,0},"idealVelocity":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"idealDirection":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"horizontalVelocityDelta":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"stickyOffset":0,"cardinalRaycast":{"$type":"UnityEngine.RaycastHit,
+        UnityEngine.PhysicsModule"},"smallestDistance":0,"longestDistance":0,"smallestRaycast":{"$type":"UnityEngine.RaycastHit,
+        UnityEngine.PhysicsModule"},"emptyRaycast":{"$type":"UnityEngine.RaycastHit,
+        UnityEngine.PhysicsModule"},"downRaycastsOffset":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"moveWithPlatformMoveDistance":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"moveWithPlatformGlobalPoint":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"moveWithPlatformGlobalRotation":{"$type":"UnityEngine.Quaternion,
+        UnityEngine.CoreModule",0,0,0,0},"moveWithPlatformRotationDiff":{"$type":"UnityEngine.Quaternion,
+        UnityEngine.CoreModule",0,0,0,0},"raycastDownHit":{"$type":"UnityEngine.RaycastHit,
+        UnityEngine.PhysicsModule"},"raycastDownDirection":{"$type":"UnityEngine.Vector3,
+        UnityEngine.CoreModule",0,0,0},"canGoBackHeadCheck":{"$type":"UnityEngine.RaycastHit,
+        UnityEngine.PhysicsModule"},"tooSteepLastFrame":false}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 523861822998060, guid: 59e60e17be98f7849af610bd5412e407, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[1]
+      value: '"path":"component.[0].characterController","value":$eref:1'
+      objectReference: {fileID: 0}
+    - target: {fileID: 523861822998060, guid: 59e60e17be98f7849af610bd5412e407, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[2]
+      value: '"path":"component.[0].Transform","value":$eref:0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 523861822998060, guid: 59e60e17be98f7849af610bd5412e407, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 523861822998060, guid: 59e60e17be98f7849af610bd5412e407, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1373240096}
+    - target: {fileID: 523861822998060, guid: 59e60e17be98f7849af610bd5412e407, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1373240094}
+    - target: {fileID: 5116558644766015640, guid: 59e60e17be98f7849af610bd5412e407,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116558644766015640, guid: 59e60e17be98f7849af610bd5412e407,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.93126
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116558644766015640, guid: 59e60e17be98f7849af610bd5412e407,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.2255125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116558644766015640, guid: 59e60e17be98f7849af610bd5412e407,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.187757
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116558644766015640, guid: 59e60e17be98f7849af610bd5412e407,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116558644766015640, guid: 59e60e17be98f7849af610bd5412e407,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116558644766015640, guid: 59e60e17be98f7849af610bd5412e407,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116558644766015640, guid: 59e60e17be98f7849af610bd5412e407,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116558644766015640, guid: 59e60e17be98f7849af610bd5412e407,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116558644766015640, guid: 59e60e17be98f7849af610bd5412e407,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116558644766015640, guid: 59e60e17be98f7849af610bd5412e407,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5907156295787677415, guid: 59e60e17be98f7849af610bd5412e407,
+        type: 3}
+      propertyPath: m_Name
+      value: Character
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 59e60e17be98f7849af610bd5412e407, type: 3}
