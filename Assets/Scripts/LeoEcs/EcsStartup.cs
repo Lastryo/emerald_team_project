@@ -36,6 +36,9 @@ namespace Client
             Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(_systems);
 #endif
             _systems
+            .Inject(_sceneData)
+            .InjectUi(_uiEmitter)
+            .Add(new SceneLoadSystem())
                 // register your systems here, for example:
                 // .Add (new TestSystem1 ())
                 // .Add (new TestSystem2 ())
