@@ -1,4 +1,5 @@
 using Leopotam.Ecs;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Client
@@ -6,8 +7,10 @@ namespace Client
     sealed class EcsInputSystem : IEcsInitSystem, IEcsRunSystem
     {
         readonly EcsWorld _world = null;
+        private EcsFilter<TopDownControllerComponent> topDownFilter = null;
 
         private InputActions inputMap;
+
 
         public void Init()
         {
@@ -17,7 +20,13 @@ namespace Client
 
         public void Run()
         {
-
+            if (topDownFilter.IsEmpty()) return;
+            ref var topDownComponent = ref topDownFilter.Get1(default);
+            topDownComponent.InputMoveDirection = inputMap.Player.Move.ReadValue<Vector2>();
+            if(topDownComponent.InputMoveDirection.magnitude > 0)
+            {
+                
+            }
         }
     }
 
