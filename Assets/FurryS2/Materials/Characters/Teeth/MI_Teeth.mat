@@ -14,7 +14,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2450
+  m_CustomRenderQueue: 2475
   stringTagMap:
     MotionVector: User
     RenderType: TransparentCutout
@@ -123,6 +123,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 1
     - _AlphaCutoff: 0.5
@@ -145,6 +146,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DirtBoots: 0
+    - _DirtRoughness: 0
     - _DirtRoughness_Power: 0
     - _DitherBoosts: 1
     - _DoubleSidedEnable: 0
@@ -171,6 +173,7 @@ Material:
     - _OpacityBoosts: 9.5
     - _Parallax: 0.02
     - _ReceivesSSR: 1
+    - _ReceivesSSRTransparent: 0
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
     - _RoughnessBoost01: 1
@@ -190,6 +193,7 @@ Material:
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
+    - _SupportDecals: 1
     - _SurfaceType: 0
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
@@ -216,3 +220,4 @@ Material:
     - _EmissiveColor4: {r: 0, g: 0, b: 0, a: 0}
     - _EmissiveColor5: {r: 0, g: 0, b: 0, a: 0}
     - _PannerProperty1: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
