@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2686e09ec7aef44bad2843e4416f057, type: 3}
   m_Name: DawnProfile_Skin
   m_EditorClassIdentifier: 
-  m_Version: 1
   profile:
     scatteringDistance: {r: 2.6806288, g: 0.19192788, b: 0, a: 1}
     transmissionTint: {r: 1, g: 0.04654581, b: 0, a: 1}
@@ -22,3 +21,4 @@ MonoBehaviour:
     worldScale: 1
     ior: 1.163
     hash: 1074601224
+  m_Version: 1
