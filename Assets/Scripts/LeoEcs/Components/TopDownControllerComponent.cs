@@ -16,6 +16,8 @@ namespace Client
 
         public Transform Transform;
         public CharacterController characterController;
+        public Rigidbody rigidBody;
+        public Collider collider;
         /// the current input sent to this character
         [Tooltip("the current input sent to this character")]
         public Vector3 InputMoveDirection;
