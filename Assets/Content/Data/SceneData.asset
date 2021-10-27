@@ -26,8 +26,8 @@ MonoBehaviour:
       m_EditorAssetChanged: 0
     name: MainMenu
   - sceneAsset:
-      m_AssetGUID: a8d4033e23fa2094a9daa26c2c5c236e
+      m_AssetGUID: 40e2fad45a8bea642982688d0dbb1d16
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    name: Level
+    name: Game
