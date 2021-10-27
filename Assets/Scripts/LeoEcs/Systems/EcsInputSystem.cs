@@ -23,10 +23,6 @@ namespace Client
             if (topDownFilter.IsEmpty()) return;
             ref var topDownComponent = ref topDownFilter.Get1(default);
             topDownComponent.InputMoveDirection = inputMap.Player.Move.ReadValue<Vector2>();
-            if(topDownComponent.InputMoveDirection.magnitude > 0)
-            {
-                
-            }
         }
     }
 

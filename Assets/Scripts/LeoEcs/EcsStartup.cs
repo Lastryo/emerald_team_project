@@ -52,6 +52,9 @@ namespace Client
             .Inject(_sceneData)
             .Add(new SceneLoadSystem())
             .Add(new EcsInputSystem())
+            .Add(new SpawnSystem())
+            .Add(new CameraFollowSystem())
+
                 // register your systems here, for example:
                 // .Add (new TestSystem1 ())
                 // .Add (new TestSystem2 ())
@@ -67,7 +70,7 @@ namespace Client
                 .Init();
 
             _fixedSystems
-
+            .Add(new MovementSystem())
             .Init();
         }
 
