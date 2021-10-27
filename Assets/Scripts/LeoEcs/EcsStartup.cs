@@ -11,6 +11,7 @@ namespace Client
 
         private EcsWorld _world;
         private EcsSystems _systems;
+        private EcsSystems _fixedSystems;
 
         public static EcsWorld World { get; private set; }
         public static EcsSystems Systems { get; private set; }
@@ -31,6 +32,7 @@ namespace Client
 
             _world = new EcsWorld();
             _systems = new EcsSystems(_world);
+            _fixedSystems = new EcsSystems(_world);
 #if UNITY_EDITOR
             Leopotam.Ecs.UnityIntegration.EcsWorldObserver.Create(_world);
             Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(_systems);
@@ -39,6 +41,7 @@ namespace Client
             .Inject(_sceneData)
             .InjectUi(_uiEmitter)
             .Add(new SceneLoadSystem())
+            .Add(new EcsInputSystem())
                 // register your systems here, for example:
                 // .Add (new TestSystem1 ())
                 // .Add (new TestSystem2 ())
@@ -51,11 +54,20 @@ namespace Client
                 // .Inject (new CameraService ())
                 // .Inject (new NavMeshSupport ())
                 .Init();
+
+            _fixedSystems
+
+            .Init();
         }
 
-        void Update()
+        private void Update()
         {
             _systems?.Run();
+        }
+
+        private void FixedUpdate()
+        {
+            _fixedSystems?.Run();
         }
 
         void OnDestroy()
