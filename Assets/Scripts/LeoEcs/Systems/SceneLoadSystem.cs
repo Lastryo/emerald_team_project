@@ -43,8 +43,7 @@ namespace Client
                     await _sceneData.UnloadScene(scene.name);
             }
             await _sceneData.LoadScene("Loading", LoadSceneMode.Additive);
-            await _sceneData.LoadScene("Lobby", LoadSceneMode.Additive, true);
-            await _sceneData.LoadScene("Interface", LoadSceneMode.Additive);
+            await _sceneData.LoadScene("Level", LoadSceneMode.Additive, true);
             await _sceneData.UnloadScene("Loading");
         }
 

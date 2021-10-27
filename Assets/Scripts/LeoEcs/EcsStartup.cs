@@ -20,26 +20,36 @@ namespace Client
         public static EcsEntity NewEntity(string ID)
         {
             var entity = World.NewEntity();
-            // entity.Get<IDComponent>().id = ID;
+            entity.Get<IDComponent>().id = ID;
 #if UNITY_EDITOR
 #endif
             return entity;
         }
 
-        void Start()
+        private void Awake()
+        {
+            // void can be switched to IEnumerator for support coroutines.
+            _world = new EcsWorld();
+            World = _world;
+            _systems = new EcsSystems(_world);
+            _fixedSystems = new EcsSystems(_world);
+
+            Systems = _systems;
+            UiEmitter = _uiEmitter;
+            Initialize();
+        }
+
+        void Initialize()
         {
             // void can be switched to IEnumerator for support coroutines.
 
-            _world = new EcsWorld();
-            _systems = new EcsSystems(_world);
-            _fixedSystems = new EcsSystems(_world);
+
 #if UNITY_EDITOR
             Leopotam.Ecs.UnityIntegration.EcsWorldObserver.Create(_world);
             Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(_systems);
 #endif
             _systems
             .Inject(_sceneData)
-            .InjectUi(_uiEmitter)
             .Add(new SceneLoadSystem())
             .Add(new EcsInputSystem())
                 // register your systems here, for example:
@@ -53,6 +63,7 @@ namespace Client
                 // inject service instances here (order doesn't important), for example:
                 // .Inject (new CameraService ())
                 // .Inject (new NavMeshSupport ())
+                .InjectUi(_uiEmitter)
                 .Init();
 
             _fixedSystems
