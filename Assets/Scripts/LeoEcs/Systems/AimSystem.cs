@@ -7,6 +7,7 @@ namespace Client
     {
         readonly EcsWorld _world = null;
         readonly EcsFilter<TopDownControllerComponent, FollowCameraComponent>.Exclude<DeathComponent> _characterFilter;
+        readonly EcsFilter<AimComponent> uiAimFilter;
         private Transform cube;
 
 
@@ -15,6 +16,9 @@ namespace Client
         {
             if (_characterFilter.IsEmpty()) return;
 
+            if (Cursor.visible)
+                Cursor.visible = false;
+                
             foreach (var index in _characterFilter)
             {
                 ref var topDownComponent = ref _characterFilter.Get1(index);
@@ -28,6 +32,8 @@ namespace Client
                     cube = GameObject.CreatePrimitive(PrimitiveType.Cube).transform;
 
                 cube.position = topDownComponent.FinalLookPosition;
+                if (uiAimFilter.IsEmpty()) return;
+                uiAimFilter.Get1(default).rect.position = topDownComponent.InputLookDirection;
             }
         }
 

@@ -8,6 +8,7 @@ namespace Client
     {
         readonly EcsWorld _world = null;
         private EcsFilter<TopDownControllerComponent> topDownFilter = null;
+        private EcsFilter<BulletComponent>.Exclude<BulletShootingComponent> isReadyShoot = null;
 
         private InputActions inputMap;
 
@@ -16,6 +17,7 @@ namespace Client
         {
             inputMap = new InputActions();
             inputMap.Player.Enable();
+            inputMap.Player.Fire.performed += Shoot;
         }
 
         public void Run()
@@ -24,6 +26,13 @@ namespace Client
             ref var topDownComponent = ref topDownFilter.Get1(default);
             topDownComponent.InputMoveDirection = inputMap.Player.Move.ReadValue<Vector2>();
             topDownComponent.InputLookDirection = inputMap.Player.Look.ReadValue<Vector2>();
+
+        }
+
+        public void Shoot(InputAction.CallbackContext context)
+        {
+            if (isReadyShoot.IsEmpty()) return;
+            _world.NewEntity().Get<ShootEvent>();
         }
     }
 

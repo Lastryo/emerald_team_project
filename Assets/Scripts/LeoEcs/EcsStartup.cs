@@ -55,6 +55,7 @@ namespace Client
             .Add(new SpawnSystem())
             .Add(new CameraFollowSystem())
             .Add(new AimSystem())
+            .Add(new CrossbowBulletSystem())
 
 
 
@@ -72,6 +73,8 @@ namespace Client
                 // inject service instances here (order doesn't important), for example:
                 // .Inject (new CameraService ())
                 // .Inject (new NavMeshSupport ())
+
+                .OneFrame<ShootEvent>()
                 .InjectUi(_uiEmitter)
                 .Init();
 
