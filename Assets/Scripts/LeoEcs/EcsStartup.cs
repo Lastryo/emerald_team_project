@@ -56,6 +56,11 @@ namespace Client
             .Add(new CameraFollowSystem())
             .Add(new AimSystem())
 
+
+
+
+            .Add(new HPBarSystem())
+
                 // register your systems here, for example:
                 // .Add (new TestSystem1 ())
                 // .Add (new TestSystem2 ())

@@ -17,6 +17,7 @@ namespace Client
         public NavMeshAgent Agent;
         public Transform Transform;
         public Collider Collider;
+        public Transform ModelTransform;
         public float MoveSpeed;
 
         [HideInInspector]
@@ -26,7 +27,10 @@ namespace Client
         public Vector2 InputLookDirection;
 
         [HideInInspector]
-        public Vector3 FinalLookPOosition;
+        public Vector2 InputDeltaLookDirection;
+
+        [HideInInspector]
+        public Vector3 FinalLookPosition;
 
         [HideInInspector]
         public bool isMoving;
