@@ -8,6 +8,7 @@ sealed class MovementSystem : IEcsRunSystem
     readonly EcsWorld _world = null;
     private EcsFilter<TopDownControllerComponent> characterFilter = null;
     private int animationMoveId = Animator.StringToHash("Forward");
+    private int animationTurnId = Animator.StringToHash("Turn");
 
     public void Run()
     {
@@ -44,7 +45,8 @@ sealed class MovementSystem : IEcsRunSystem
             agent.Move(moveDirection * moveComponent.MoveSpeed * Time.deltaTime);
             if (characterEntity.Has<AnimationComponent>())
             {
-                characterEntity.Get<AnimationComponent>().animator.SetFloat(animationMoveId, moveComponent.InputMoveDirection.sqrMagnitude);
+                characterEntity.Get<AnimationComponent>().animator.SetFloat(animationMoveId, moveComponent.InputMoveDirection.x);
+                //characterEntity.Get<AnimationComponent>().animator.SetFloat(animationMoveId, moveComponent.InputMoveDirection.y);
             }
 
             moveComponent.isMoving = true;
