@@ -7,8 +7,9 @@ sealed class MovementSystem : IEcsRunSystem
     // auto-injected fields.
     readonly EcsWorld _world = null;
     private EcsFilter<TopDownControllerComponent> characterFilter = null;
-    private int animationMoveId = Animator.StringToHash("Forward");
-    private int animationTurnId = Animator.StringToHash("Turn");
+    private int animationMoveId = Animator.StringToHash("Move");
+    private int animationMoveXId = Animator.StringToHash("X");
+    private int animationMoveYId = Animator.StringToHash("Y");
 
     public void Run()
     {
@@ -35,22 +36,23 @@ sealed class MovementSystem : IEcsRunSystem
             if (!moveComponent.isMoving)
             {
                 moveComponent.isMoving = true;
-                //_world.NewEntity().Get<MoveAnimationEvent>().IsActive = moveComponent.isMoving;
             }
-
 
             var agent = moveComponent.Agent;
             var transform = moveComponent.Transform;
-
             agent.Move(moveDirection * moveComponent.MoveSpeed * Time.deltaTime);
-            if (characterEntity.Has<AnimationComponent>())
-            {
-                characterEntity.Get<AnimationComponent>().animator.SetFloat(animationMoveId, moveComponent.InputMoveDirection.x);
-                //characterEntity.Get<AnimationComponent>().animator.SetFloat(animationMoveId, moveComponent.InputMoveDirection.y);
-            }
 
+            var velocityZ = Vector3.Dot(moveDirection, moveComponent.ModelTransform.forward);
+            var velocityX = Vector3.Dot(moveDirection, moveComponent.ModelTransform.right);
             moveComponent.isMoving = true;
             // Rotate(transform, moveDirection);
+
+            if (characterEntity.Has<AnimationComponent>())
+            {
+                characterEntity.Get<AnimationComponent>().animator.SetFloat(animationMoveYId, velocityZ);
+                characterEntity.Get<AnimationComponent>().animator.SetFloat(animationMoveXId, velocityX);
+                characterEntity.Get<AnimationComponent>().animator.SetBool(animationMoveId, true);
+            }
         }
     }
 
@@ -68,7 +70,7 @@ sealed class MovementSystem : IEcsRunSystem
             ref var characterEntity = ref characterFilter.GetEntity(character);
             if (characterEntity.Has<AnimationComponent>())
             {
-                characterEntity.Get<AnimationComponent>().animator.SetFloat(animationMoveId, moveComponent.InputMoveDirection.sqrMagnitude);
+                characterEntity.Get<AnimationComponent>().animator.SetBool(animationMoveId, false);
             }
             moveComponent.isMoving = false;
         }

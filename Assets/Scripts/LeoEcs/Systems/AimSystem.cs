@@ -9,7 +9,7 @@ namespace Client
         readonly EcsFilter<TopDownControllerComponent, FollowCameraComponent>.Exclude<DeathComponent> _characterFilter;
         private Transform cube;
 
-        private int animationDirectionId = Animator.StringToHash("Turn");
+
 
         public void Run()
         {
@@ -28,10 +28,6 @@ namespace Client
                     cube = GameObject.CreatePrimitive(PrimitiveType.Cube).transform;
 
                 cube.position = topDownComponent.FinalLookPosition;
-                if (characterEntity.Has<AnimationComponent>())
-                {
-                    characterEntity.Get<AnimationComponent>().animator.SetFloat(animationDirectionId, topDownComponent.InputMoveDirection.y);
-                }
             }
         }
 
@@ -39,7 +35,7 @@ namespace Client
         {
 
             Ray ray = Camera.main.ScreenPointToRay(mousePosition);
-            if (Physics.Raycast(ray, out var hitInfo, 100, LayerManager.MouseRaycastingLayerMask))
+            if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, LayerManager.MouseRaycastingLayerMask))
             {
                 var hitPoint = hitInfo.point;
                 hitPoint.y = 0;

@@ -55,6 +55,15 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LookAxis"",
+                    ""type"": ""Value"",
+                    ""id"": ""9d7a2eff-50cf-4afb-ab49-e34790dae136"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -286,6 +295,17 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""groups"": ""XR"",
                     ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7adc767a-0fb5-4207-9790-abc9c83dbab6"",
+                    ""path"": ""<Mouse>/radius"",
+                    ""interactions"": """",
+                    ""processors"": ""NormalizeVector2"",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""LookAxis"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -876,6 +896,7 @@ namespace UnityEngine.InputSystem
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
             m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
             m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+            m_Player_LookAxis = m_Player.FindAction("LookAxis", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -950,6 +971,7 @@ namespace UnityEngine.InputSystem
         private readonly InputAction m_Player_Move;
         private readonly InputAction m_Player_Look;
         private readonly InputAction m_Player_Fire;
+        private readonly InputAction m_Player_LookAxis;
         public struct PlayerActions
         {
             private @InputActions m_Wrapper;
@@ -957,6 +979,7 @@ namespace UnityEngine.InputSystem
             public InputAction @Move => m_Wrapper.m_Player_Move;
             public InputAction @Look => m_Wrapper.m_Player_Look;
             public InputAction @Fire => m_Wrapper.m_Player_Fire;
+            public InputAction @LookAxis => m_Wrapper.m_Player_LookAxis;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -975,6 +998,9 @@ namespace UnityEngine.InputSystem
                     @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                     @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                     @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                    @LookAxis.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookAxis;
+                    @LookAxis.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookAxis;
+                    @LookAxis.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookAxis;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -988,6 +1014,9 @@ namespace UnityEngine.InputSystem
                     @Fire.started += instance.OnFire;
                     @Fire.performed += instance.OnFire;
                     @Fire.canceled += instance.OnFire;
+                    @LookAxis.started += instance.OnLookAxis;
+                    @LookAxis.performed += instance.OnLookAxis;
+                    @LookAxis.canceled += instance.OnLookAxis;
                 }
             }
         }
@@ -1147,6 +1176,7 @@ namespace UnityEngine.InputSystem
             void OnMove(InputAction.CallbackContext context);
             void OnLook(InputAction.CallbackContext context);
             void OnFire(InputAction.CallbackContext context);
+            void OnLookAxis(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {
