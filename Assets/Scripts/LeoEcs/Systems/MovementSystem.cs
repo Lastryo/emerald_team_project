@@ -41,14 +41,14 @@ sealed class MovementSystem : IEcsRunSystem
             var agent = moveComponent.Agent;
             var transform = moveComponent.Transform;
 
-            agent.Move(transform.forward * moveComponent.MoveSpeed * Time.deltaTime);
+            agent.Move(moveDirection * moveComponent.MoveSpeed * Time.deltaTime);
             if (characterEntity.Has<AnimationComponent>())
             {
                 characterEntity.Get<AnimationComponent>().animator.SetFloat(animationMoveId, moveComponent.InputMoveDirection.sqrMagnitude);
             }
 
             moveComponent.isMoving = true;
-            Rotate(transform, moveDirection);
+            // Rotate(transform, moveDirection);
         }
     }
 
