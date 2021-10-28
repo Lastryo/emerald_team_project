@@ -382,8 +382,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
-    SerializedBytes: 01010900000063006f006d0070006f006e0065006e0074002f00000000012400000043006c00690065006e0074002e00490043006f006d0070006f006e0065006e0074005b005d002c00200041007300730065006d0062006c0079002d0043005300680061007200700000000000060200000000000000022f01000000013200000043006c00690065006e0074002e0054006f00700044006f0077006e0043006f006e00740072006f006c006c006500720043006f006d0070006f006e0065006e0074002c00200041007300730065006d0062006c0079002d00430053006800610072007000010000000b01050000004100670065006e007400000000000b01090000005400720061006e00730066006f0072006d00010000000b010800000043006f006c006c006900640065007200020000001f01090000004d006f0076006500530070006500650064000000a04003011200000049006e007000750074004d006f007600650044006900720065006300740069006f006e002f02000000012b00000055006e0069007400790045006e00670069006e0065002e0056006500630074006f00720032002c00200055006e0069007400790045006e00670069006e0065002e0043006f00720065004d006f00640075006c00650020000000002000000000052b0108000000690073004d006f00760069006e0067000005022f03000000012a00000043006c00690065006e0074002e0041006e0069006d006100740069006f006e0043006f006d0070006f006e0065006e0074002c00200041007300730065006d0062006c0079002d00430053006800610072007000020000000b010800000061006e0069006d00610074006f00720003000000050705
+    SerializedFormat: 2
+    SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 3524965606532247802}
     - {fileID: 5116558644766015640}
@@ -393,7 +393,73 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: component
+      Entry: 7
+      Data: 0|Client.IComponent[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 1|Client.TopDownControllerComponent, Assembly-CSharp
+    - Name: Agent
+      Entry: 10
+      Data: 0
+    - Name: Transform
+      Entry: 10
+      Data: 1
+    - Name: Collider
+      Entry: 10
+      Data: 2
+    - Name: MoveSpeed
+      Entry: 4
+      Data: 5
+    - Name: InputMoveDirection
+      Entry: 7
+      Data: UnityEngine.Vector2, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: isMoving
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|Client.AnimationComponent, Assembly-CSharp
+    - Name: animator
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|Client.HPComponent, Assembly-CSharp
+    - Name: HP
+      Entry: 3
+      Data: 100
+    - Name: MaxHP
+      Entry: 3
+      Data: 100
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
 --- !u!136 &5815340220621032558
 CapsuleCollider:
   m_ObjectHideFlags: 0

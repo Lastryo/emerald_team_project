@@ -18,16 +18,16 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    name: LoadingScene
+    type: 0
   - sceneAsset:
       m_AssetGUID: 8e4d759f96a6a6a4d84e4e652217efa8
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    name: MainMenuScene
+    type: 1
   - sceneAsset:
       m_AssetGUID: 40e2fad45a8bea642982688d0dbb1d16
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    name: GameScene
+    type: 2
