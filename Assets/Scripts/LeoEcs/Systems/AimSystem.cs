@@ -9,6 +9,8 @@ namespace Client
         readonly EcsFilter<TopDownControllerComponent, FollowCameraComponent>.Exclude<DeathComponent> _characterFilter;
         private Transform cube;
 
+        private int animationDirectionId = Animator.StringToHash("Turn");
+
         public void Run()
         {
             if (_characterFilter.IsEmpty()) return;
@@ -17,15 +19,19 @@ namespace Client
             {
                 ref var topDownComponent = ref _characterFilter.Get1(index);
                 ref var followCameraComponent = ref _characterFilter.Get2(index);
-
-                topDownComponent.FinalLookPOosition = GetPosition(topDownComponent.InputLookDirection);
-                topDownComponent.FinalLookPOosition.y = topDownComponent.Transform.position.y;
-                topDownComponent.Transform.LookAt(topDownComponent.FinalLookPOosition);
+                ref var characterEntity = ref _characterFilter.GetEntity(index);
+                topDownComponent.FinalLookPosition = GetPosition(topDownComponent.InputLookDirection);
+                topDownComponent.FinalLookPosition.y = topDownComponent.Transform.position.y;
+                topDownComponent.ModelTransform.LookAt(topDownComponent.FinalLookPosition);
 
                 if (cube == null)
                     cube = GameObject.CreatePrimitive(PrimitiveType.Cube).transform;
 
-                cube.position = topDownComponent.FinalLookPOosition;
+                cube.position = topDownComponent.FinalLookPosition;
+                if (characterEntity.Has<AnimationComponent>())
+                {
+                    characterEntity.Get<AnimationComponent>().animator.SetFloat(animationDirectionId, topDownComponent.InputMoveDirection.y);
+                }
             }
         }
 
