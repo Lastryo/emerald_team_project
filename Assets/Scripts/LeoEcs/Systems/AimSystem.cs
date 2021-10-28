@@ -30,7 +30,7 @@ namespace Client
                 cube.position = topDownComponent.FinalLookPosition;
                 if (characterEntity.Has<AnimationComponent>())
                 {
-                    characterEntity.Get<AnimationComponent>().animator.SetFloat(animationDirectionId, topDownComponent.InputDeltaLookDirection.x);
+                    characterEntity.Get<AnimationComponent>().animator.SetFloat(animationDirectionId, topDownComponent.InputMoveDirection.y);
                 }
             }
         }
