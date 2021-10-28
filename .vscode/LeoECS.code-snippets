@@ -24,7 +24,7 @@
     "scope": "csharp",
     "prefix": "LeoECSComponent",
     "body": [
-      "using Sirenix.Serialization;",
+      "using Sirenix.OdinInspector;",
       "using Leopotam.Ecs;\n",
       "namespace Client",
       "{",

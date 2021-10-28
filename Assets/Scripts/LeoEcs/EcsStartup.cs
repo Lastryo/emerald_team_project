@@ -54,6 +54,7 @@ namespace Client
             .Add(new EcsInputSystem())
             .Add(new SpawnSystem())
             .Add(new CameraFollowSystem())
+            .Add(new AimSystem())
 
                 // register your systems here, for example:
                 // .Add (new TestSystem1 ())

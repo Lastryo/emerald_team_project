@@ -4,6 +4,7 @@
 /// </summary>
 public static class LayerManager
 {
+    private static int MouseRaycasting = 7;
     private static int ObstaclesLayer = 8;
     private static int GroundLayer = 9;
     private static int PlayerLayer = 10;
@@ -12,7 +13,7 @@ public static class LayerManager
     private static int MovingPlatformLayer = 16;
     private static int FallingPlatformLayer = 17;
     private static int ProjectileLayer = 18;
-
+    public static int MouseRaycastingLayerMask = 1 << MouseRaycasting;
     public static int ObstaclesLayerMask = 1 << ObstaclesLayer;
     public static int GroundLayerMask = 1 << GroundLayer;
     public static int PlayerLayerMask = 1 << PlayerLayer;

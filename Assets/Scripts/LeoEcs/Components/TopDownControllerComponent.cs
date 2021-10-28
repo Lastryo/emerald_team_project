@@ -23,6 +23,12 @@ namespace Client
         public Vector2 InputMoveDirection;
 
         [HideInInspector]
+        public Vector2 InputLookDirection;
+
+        [HideInInspector]
+        public Vector3 FinalLookPOosition;
+
+        [HideInInspector]
         public bool isMoving;
         public void SetOwner(in EcsEntity entity, out IComponent component)
         {
