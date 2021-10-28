@@ -10,7 +10,7 @@ namespace Client
     {
 #if UNITY_EDITOR
         [ShowInInspector]
-        public string Doc => "Компонент который содержит данные о камере";
+        public string Doc => "РљРѕРјРїРѕРЅРµРЅС‚ РєРѕС‚РѕСЂС‹Р№ СЃРѕРґРµСЂР¶РёС‚ РґР°РЅРЅС‹Рµ Рѕ РєР°РјРµСЂРµ";
 #endif
         public Camera camera;
         public CinemachineVirtualCamera virtualCamera;

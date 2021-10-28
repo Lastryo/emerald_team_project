@@ -27,6 +27,7 @@ namespace Client
                     if (!IsCameraFollowingNow(ref cameraComponent))
                     {
                         cameraComponent.virtualCamera.m_Follow = transformComponent.Transform;
+                        cameraComponent.virtualCamera.m_LookAt = transformComponent.Transform;
                         ref var followComponent = ref characterTagFilter.GetEntity(characterTag).Get<FollowCameraComponent>();
                         followComponent.camera = cameraComponent.camera;
                     }
