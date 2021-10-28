@@ -34,9 +34,9 @@
       "        [ShowInInspector]",
       "        public string Doc => \"Компонент который отвечает за...\";",
       "#endif",
-      "        public void SetOwner(in EcsEntity entity)",
+      "        public void SetOwner(in EcsEntity entity, out IComponent component)",
       "        {",
-      "            entity.Get<$TM_FILENAME_BASE>() = this;",
+      "            component = entity.Get<$TM_FILENAME_BASE>() = this;",
       "        }",
       "    }",
       "}"
