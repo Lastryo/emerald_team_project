@@ -51,6 +51,9 @@ namespace Client
             _systems
             .Inject(_sceneData)
             .Add(new SceneLoadSystem())
+                .OneFrame<LoadGameEvent>()
+                .OneFrame<LoadMainMenuEvent>()
+                
             .Add(new EcsInputSystem())
             .Add(new SpawnSystem())
             .Add(new CameraFollowSystem())
@@ -82,6 +85,8 @@ namespace Client
                 .OneFrame<DamageEvent>()
                 .OneFrame<ShootInputEvent>()
                 .OneFrame<ShootEvent>()
+
+                .OneFrame<ResetEnemyAttackEvent>()
                 .InjectUi(_uiEmitter)
                 .Init();
 

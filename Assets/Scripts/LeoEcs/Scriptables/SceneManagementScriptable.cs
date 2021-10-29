@@ -17,7 +17,16 @@ public class SceneManagementScriptable : ScriptableObject
         var neededScene = scenes.FirstOrDefault(s => s.type == type);
         var asset = await neededScene.sceneAsset.LoadSceneAsync(mode, true).Task;
         if (isMain)
+        {
+           
             SceneManager.SetActiveScene(asset.Scene);
+        }
+
+    }
+
+    public void SetActiveScene(Scene scene)
+    {
+        SceneManager.SetActiveScene(scene);
     }
 
     public Task UnloadScene(SceneType type)

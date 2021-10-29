@@ -1,3 +1,5 @@
+using System;
+using System.Threading.Tasks;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -17,10 +19,17 @@ namespace Client
             {
                 ref var spawnEntity = ref spawnFilter.GetEntity(item);
                 ref var spawnComponent = ref spawnFilter.Get1(item);
+                Spawn(spawnComponent.prefab, spawnComponent.point.transform.position);
 
-                GameObject.Instantiate(spawnComponent.prefab, spawnComponent.point.transform.position, Quaternion.identity);
                 spawnEntity.Get<StopSpawnMarkerComponent>();
             }
+        }
+
+
+        public async void Spawn(GameObject prefab, Vector3 position)
+        {
+            await Task.Delay(TimeSpan.FromSeconds(2));
+            GameObject.Instantiate(prefab, position, Quaternion.identity);
         }
     }
 

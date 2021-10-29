@@ -11,18 +11,18 @@ namespace Client
         readonly EcsFilter<TopDownControllerComponent>.Exclude<DeathComponent> characterFilter;
         readonly EcsFilter<ResetEnemyAttackEvent> resetEventFilter;
 
-
-
         public void Run()
         {
             if (enemyFilter.IsEmpty()) return;
             if (characterFilter.IsEmpty()) return;
+            ResetAttack();
 
             foreach (var item in enemyFilter)
             {
                 ref var enemyController = ref enemyFilter.Get1(item);
                 ref var characterController = ref characterFilter.Get1(default);
                 ref var enemyEntity = ref enemyFilter.GetEntity(item);
+                if (enemyEntity.Has<InAttackMarkerComponent>()) return;
                 if (Vector3.Distance(characterController.Transform.position, enemyController.transform.position) > enemyController.attackRange)
                 {
                     RunToTarget(ref enemyController, ref characterController);
@@ -32,8 +32,6 @@ namespace Client
                     Attack(ref enemyEntity);
                 }
             }
-
-            ResetAttack();
         }
 
         private void ResetAttack()
@@ -76,5 +74,4 @@ namespace Client
             aiComponent.animation.SetBool("Move", true);
         }
     }
-
 }

@@ -49,6 +49,7 @@ namespace Client
             var neededData = pointComponent.data.FirstOrDefault(x => x.type == currentType);
             var bullet = GameObject.Instantiate(neededData.Bullet, pointComponent.point.position, Quaternion.identity).transform;
             entity.Get<BusyProjectilePointComponent>().Bullet = bullet;
+            bullet.GetComponent<Collider>().enabled = false;
         }
 
 
@@ -69,6 +70,7 @@ namespace Client
                 else
                 {
                     CreateBullet(item);
+
                 }
             }
         }
@@ -115,6 +117,8 @@ namespace Client
 
             foreach (var item in pointFilter)
             {
+                bulletComponent.transform.GetComponent<Collider>().enabled = true;
+
                 bulletEntity.Get<BulletShootingComponent>();
                 pointEntity.Del<BusyProjectilePointComponent>();
                 isPuched = false;

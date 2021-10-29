@@ -7,6 +7,7 @@ namespace Client
     {
         readonly EcsWorld _world = null;
         public EcsFilter<HPComponent, ChangeHPComponent> changeHPFilter;
+        public EcsFilter<DeathScreenComponent> deathScreenFilter;
 
         public void Run()
         {
@@ -37,6 +38,11 @@ namespace Client
                             hpComponent.HP = 0;
                             entity.Get<DeathComponent>();
                             entity.Get<RagdollComponent>().Ragdoll.isActive = false;
+                            if (entity.Has<TopDownControllerComponent>())
+                            {
+                                if (deathScreenFilter.IsEmpty()) return;
+                                deathScreenFilter.Get1(default).deathScreen.gameObject.SetActive(true);
+                            }
                             Debug.Log($"Умер");
                             // анимация смерти
                         }

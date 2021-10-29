@@ -1,3 +1,5 @@
+using System;
+using System.Threading.Tasks;
 using Leopotam.Ecs;
 using Leopotam.Ecs.Ui.Components;
 using UnityEngine;
@@ -13,6 +15,11 @@ namespace Client
         readonly EcsWorld _world;
         readonly SceneManagementScriptable _sceneData;
         readonly EcsFilter<EcsUiClickEvent> _clickEvents = null;
+
+        readonly EcsFilter<LoadMainMenuEvent> _mainMenuEvent = null;
+
+        readonly EcsFilter<LoadGameEvent> _gameEvent = null;
+
 
         public void Init()
         {
@@ -35,6 +42,7 @@ namespace Client
 
             await _sceneData.LoadScene(SceneType.Loading, LoadSceneMode.Additive);
             await _sceneData.LoadScene(SceneType.Game, LoadSceneMode.Additive, true);
+            await Task.Delay(TimeSpan.FromSeconds(2));
             await _sceneData.UnloadScene(SceneType.Loading);
         }
 
@@ -58,6 +66,18 @@ namespace Client
                     LoadMainMenu();
                 }
             }
+
+            if (!_mainMenuEvent.IsEmpty())
+            {
+                LoadMainMenu();
+            }
+
+            if (!_gameEvent.IsEmpty())
+            {
+                LoadNewGame();
+            }
+
+
         }
     }
 }

@@ -35,8 +35,6 @@ namespace Client
                 ref var changeHP = ref entity.Get<ChangeHPComponent>();
                 changeHP.Type = ChangeHPComponent.ChangeHealthType.Damage;
                 changeHP.Value = 20;
-
-
                 Debug.Log("Получил урон");
             }
         }

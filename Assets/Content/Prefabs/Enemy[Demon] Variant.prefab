@@ -436,7 +436,7 @@ MonoBehaviour:
       Data: 0|Client.IComponent[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 5
     - Name: 
       Entry: 7
       Data: 1|Client.TopDownAiComponent, Assembly-CSharp
@@ -494,6 +494,21 @@ MonoBehaviour:
     - Name: Ragdoll
       Entry: 10
       Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|Client.AttackTriggerComponent, Assembly-CSharp
+    - Name: Mask
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 1024
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1851,6 +1866,8 @@ GameObject:
   - component: {fileID: 3475280189345475460}
   - component: {fileID: 546474313296684065}
   - component: {fileID: 2337790659336622315}
+  - component: {fileID: 2876682829770603689}
+  - component: {fileID: 3620256315384295303}
   m_Layer: 0
   m_Name: Demon_Sword_Mesh
   m_TagString: Untagged
@@ -1923,6 +1940,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2876682829770603689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4283341368317964606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fb1e3d88f7b41d4e884f2e92fccc0d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!64 &3620256315384295303
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4283341368317964606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4686849319519084627, guid: 6f98e6cb86bedc64b9e3a9ac4067b4b1, type: 3}
 --- !u!1 &4311246848797479423
 GameObject:
   m_ObjectHideFlags: 0
@@ -3565,6 +3608,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4b050132e3e824abded9c462eed052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackDelay: 2
+  AttackCollider: {fileID: 3620256315384295303}
 --- !u!1 &7834214673884959284
 GameObject:
   m_ObjectHideFlags: 0

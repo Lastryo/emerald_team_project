@@ -13,6 +13,8 @@ public static class LayerManager
     private static int MovingPlatformLayer = 16;
     private static int FallingPlatformLayer = 17;
     private static int ProjectileLayer = 18;
+    private static int EnemiesAttackLayer = 23;
+
     public static int MouseRaycastingLayerMask = 1 << MouseRaycasting;
     public static int ObstaclesLayerMask = 1 << ObstaclesLayer;
     public static int GroundLayerMask = 1 << GroundLayer;
@@ -22,4 +24,6 @@ public static class LayerManager
     public static int MovingPlatformLayerMask = 1 << MovingPlatformLayer;
     public static int FallingPlatformLayerMask = 1 << FallingPlatformLayer;
     public static int ProjectileLayerMask = 1 << ProjectileLayer;
+    public static int EnemiesAttackLayerMask = 1 << EnemiesAttackLayer;
+
 }
