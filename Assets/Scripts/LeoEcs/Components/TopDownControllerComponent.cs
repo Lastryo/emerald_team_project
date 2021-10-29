@@ -34,7 +34,7 @@ namespace Client
 
         [HideInInspector]
         public bool isMoving;
-        public void SetOwner(in EcsEntity entity, out IComponent component)
+        public void SetOwner(ref EcsEntity entity, out IComponent component)
         {
             component = entity.Get<TopDownControllerComponent>() = this;
         }
