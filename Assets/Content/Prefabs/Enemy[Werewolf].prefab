@@ -1372,8 +1372,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8221423067363954576}
-  - component: {fileID: 6665400777600625}
   - component: {fileID: 7853306954123542660}
+  - component: {fileID: 4625280459076953565}
+  - component: {fileID: 6665400777600625}
   - component: {fileID: 7324662365788091168}
   m_Layer: 0
   m_Name: CATRigRArm2
@@ -1400,20 +1401,6 @@ Transform:
   m_Father: {fileID: 4709991261239238418}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &6665400777600625
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3544430303935220497}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.05979981
-  m_Height: 0.29899904
-  m_Direction: 0
-  m_Center: {x: -0.14949952, y: 0, z: 0}
 --- !u!54 &7853306954123542660
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1430,6 +1417,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &4625280459076953565
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544430303935220497}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.17550054, y: 0.1, z: 0.1}
+  m_Center: {x: -0.23366246, y: 0.0000000041165755, z: 2.2133628e-11}
+--- !u!136 &6665400777600625
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544430303935220497}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.05979981
+  m_Height: 0.29899904
+  m_Direction: 0
+  m_Center: {x: -0.14949952, y: 0, z: 0}
 --- !u!144 &7324662365788091168
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -3211,6 +3225,7 @@ GameObject:
   - component: {fileID: 6014783944588196644}
   - component: {fileID: 8504423440816349254}
   - component: {fileID: 8019288113308861931}
+  - component: {fileID: 760346246009732047}
   m_Layer: 0
   m_Name: Werewolf
   m_TagString: Untagged
@@ -3285,6 +3300,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flash: {fileID: 0}
   hit: {fileID: 723244084023929218}
+--- !u!114 &760346246009732047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6897728956188793844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4b050132e3e824abded9c462eed052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDelay: 2
+  AttackCollider: {fileID: 4625280459076953565}
 --- !u!1 &7144361585651264763
 GameObject:
   m_ObjectHideFlags: 0
