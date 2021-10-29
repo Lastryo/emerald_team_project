@@ -16,9 +16,9 @@ namespace Client
             if (enemyFilter.IsEmpty()) return;
             if (characterFilter.IsEmpty()) return;
 
-            if (Stomp()) return;
             ResetAttack();
-
+            
+            if (Stomp()) return;
             foreach (var item in enemyFilter)
             {
                 ref var enemyController = ref enemyFilter.Get1(item);
