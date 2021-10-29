@@ -49,9 +49,10 @@ sealed class MovementSystem : IEcsRunSystem
 
             if (characterEntity.Has<AnimationComponent>())
             {
-                characterEntity.Get<AnimationComponent>().animator.SetFloat(animationMoveYId, velocityZ);
-                characterEntity.Get<AnimationComponent>().animator.SetFloat(animationMoveXId, velocityX);
-                characterEntity.Get<AnimationComponent>().animator.SetBool(animationMoveId, true);
+                ref var animationComponent = ref characterEntity.Get<AnimationComponent>();
+                animationComponent.animator.SetFloat(animationMoveYId, velocityZ);
+                animationComponent.animator.SetFloat(animationMoveXId, velocityX);
+                animationComponent.animator.SetBool(animationMoveId, true);
             }
         }
     }

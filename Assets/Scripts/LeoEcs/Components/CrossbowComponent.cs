@@ -4,17 +4,18 @@ using UnityEngine;
 
 namespace Client
 {
-    struct ProjectilePointComponent : IComponent
+    struct CrossbowComponent : IComponent
     {
         public Transform point;
         public GameObject Bullet;
+        public Animator animation;
 #if UNITY_EDITOR
         [ShowInInspector]
         public string Doc => "Компонент который отвечает за хранение пули";
 #endif
         public void SetOwner(in EcsEntity entity, out IComponent component)
         {
-            component = entity.Get<ProjectilePointComponent>() = this;
+            component = entity.Get<CrossbowComponent>() = this;
         }
     }
 }

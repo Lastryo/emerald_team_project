@@ -6,11 +6,10 @@ namespace Client
     sealed class CrossbowBulletSystem : IEcsRunSystem
     {
         readonly EcsWorld _world = null;
-        readonly EcsFilter<ProjectilePointComponent> pointFilter = null;
+        readonly EcsFilter<CrossbowComponent> pointFilter = null;
         readonly EcsFilter<BulletComponent>.Exclude<BulletShootingComponent> isReadyToShootFilter = null;
         readonly EcsFilter<TopDownControllerComponent, FollowCameraComponent>.Exclude<DeathComponent> _characterFilter;
         readonly EcsFilter<ShootEvent> shootEvent = null;
-
 
         public void Run()
         {
@@ -38,7 +37,6 @@ namespace Client
                     var bullet = GameObject.Instantiate(pointFilter.Get1(item).Bullet, pointComponent.point.position, Quaternion.identity).transform;
                     entity.Get<BusyProjectilePointComponent>().Bullet = bullet;
                 }
-
             }
         }
 
@@ -56,10 +54,15 @@ namespace Client
                     Debug.Log("Выстрел");
                     ref var bulletEntity = ref isReadyToShootFilter.GetEntity(default);
                     ref var bulletComponent = ref isReadyToShootFilter.Get1(default);
+                    ref var characterEntity = ref _characterFilter.GetEntity(default);
+
+                    ref var animationComponent = ref characterEntity.Get<AnimationComponent>();
                     var ea = bulletComponent.transform.transform.rotation.eulerAngles;
                     bulletComponent.transform.transform.rotation = Quaternion.Euler(-90f, ea.y, ea.z);
                     bulletEntity.Get<BulletShootingComponent>();
                     pointEntity.Del<BusyProjectilePointComponent>();
+                    animationComponent.animator.SetTrigger("Shoot");
+                    pointEntity.Get<CrossbowComponent>().animation.SetTrigger("Shoot");
                 }
             }
         }
