@@ -43,6 +43,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7528829965691663039}
     m_Modifications:
+    - target: {fileID: 485245273633799231, guid: ccd2badf5777d4e4289b0641012ad345,
+        type: 3}
+      propertyPath: m_StitchLightmapSeams
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2995926819554950387, guid: ccd2badf5777d4e4289b0641012ad345,
         type: 3}
       propertyPath: m_IsActive
