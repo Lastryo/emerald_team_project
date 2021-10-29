@@ -12,7 +12,7 @@ public class SceneManagementScriptable : ScriptableObject
 {
     public SceneData[] scenes;
 
-    public async Task<SceneInstance> LoadScene(SceneType type, LoadSceneMode mode, bool isMain = false)
+    public async Task LoadScene(SceneType type, LoadSceneMode mode, bool isMain = false)
     {
         var neededScene = scenes.FirstOrDefault(s => s.type == type);
         var asset = await neededScene.sceneAsset.LoadSceneAsync(mode, true).Task;
@@ -20,7 +20,6 @@ public class SceneManagementScriptable : ScriptableObject
         {
             SceneManager.SetActiveScene(asset.Scene);
         }
-        return asset;
     }
 
     public void SetActiveScene(Scene scene)

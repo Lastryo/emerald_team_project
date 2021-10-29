@@ -33,24 +33,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "LookAxis",
-                    "type": "Value",
-                    "id": "9d7a2eff-50cf-4afb-ab49-e34790dae136",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "SilverBullet",
-                    "type": "Button",
-                    "id": "7a7ee8ac-0fdd-4cd8-8fe5-1f06b5365da3",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "RedBullet",
                     "type": "Button",
                     "id": "76525211-36f5-461c-8963-2bf828c7905c",
@@ -307,17 +289,6 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7adc767a-0fb5-4207-9790-abc9c83dbab6",
-                    "path": "<Mouse>/radius",
-                    "interactions": "",
-                    "processors": "NormalizeVector2",
-                    "groups": "Keyboard&Mouse",
-                    "action": "LookAxis",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

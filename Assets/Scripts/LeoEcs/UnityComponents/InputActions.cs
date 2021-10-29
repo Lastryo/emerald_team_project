@@ -57,24 +57,6 @@ namespace UnityEngine.InputSystem
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""LookAxis"",
-                    ""type"": ""Value"",
-                    ""id"": ""9d7a2eff-50cf-4afb-ab49-e34790dae136"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""SilverBullet"",
-                    ""type"": ""Button"",
-                    ""id"": ""7a7ee8ac-0fdd-4cd8-8fe5-1f06b5365da3"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""RedBullet"",
                     ""type"": ""Button"",
                     ""id"": ""76525211-36f5-461c-8963-2bf828c7905c"",
@@ -331,17 +313,6 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""groups"": ""XR"",
                     ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7adc767a-0fb5-4207-9790-abc9c83dbab6"",
-                    ""path"": ""<Mouse>/radius"",
-                    ""interactions"": """",
-                    ""processors"": ""NormalizeVector2"",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""LookAxis"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -965,8 +936,6 @@ namespace UnityEngine.InputSystem
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
             m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
             m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
-            m_Player_LookAxis = m_Player.FindAction("LookAxis", throwIfNotFound: true);
-            m_Player_SilverBullet = m_Player.FindAction("SilverBullet", throwIfNotFound: true);
             m_Player_RedBullet = m_Player.FindAction("RedBullet", throwIfNotFound: true);
             m_Player_VioletBullet = m_Player.FindAction("VioletBullet", throwIfNotFound: true);
             m_Player_YellowBullet = m_Player.FindAction("YellowBullet", throwIfNotFound: true);
@@ -1044,8 +1013,6 @@ namespace UnityEngine.InputSystem
         private readonly InputAction m_Player_Move;
         private readonly InputAction m_Player_Look;
         private readonly InputAction m_Player_Fire;
-        private readonly InputAction m_Player_LookAxis;
-        private readonly InputAction m_Player_SilverBullet;
         private readonly InputAction m_Player_RedBullet;
         private readonly InputAction m_Player_VioletBullet;
         private readonly InputAction m_Player_YellowBullet;
@@ -1056,8 +1023,6 @@ namespace UnityEngine.InputSystem
             public InputAction @Move => m_Wrapper.m_Player_Move;
             public InputAction @Look => m_Wrapper.m_Player_Look;
             public InputAction @Fire => m_Wrapper.m_Player_Fire;
-            public InputAction @LookAxis => m_Wrapper.m_Player_LookAxis;
-            public InputAction @SilverBullet => m_Wrapper.m_Player_SilverBullet;
             public InputAction @RedBullet => m_Wrapper.m_Player_RedBullet;
             public InputAction @VioletBullet => m_Wrapper.m_Player_VioletBullet;
             public InputAction @YellowBullet => m_Wrapper.m_Player_YellowBullet;
@@ -1079,12 +1044,6 @@ namespace UnityEngine.InputSystem
                     @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                     @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                     @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                    @LookAxis.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookAxis;
-                    @LookAxis.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookAxis;
-                    @LookAxis.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookAxis;
-                    @SilverBullet.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSilverBullet;
-                    @SilverBullet.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSilverBullet;
-                    @SilverBullet.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSilverBullet;
                     @RedBullet.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRedBullet;
                     @RedBullet.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRedBullet;
                     @RedBullet.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRedBullet;
@@ -1107,12 +1066,6 @@ namespace UnityEngine.InputSystem
                     @Fire.started += instance.OnFire;
                     @Fire.performed += instance.OnFire;
                     @Fire.canceled += instance.OnFire;
-                    @LookAxis.started += instance.OnLookAxis;
-                    @LookAxis.performed += instance.OnLookAxis;
-                    @LookAxis.canceled += instance.OnLookAxis;
-                    @SilverBullet.started += instance.OnSilverBullet;
-                    @SilverBullet.performed += instance.OnSilverBullet;
-                    @SilverBullet.canceled += instance.OnSilverBullet;
                     @RedBullet.started += instance.OnRedBullet;
                     @RedBullet.performed += instance.OnRedBullet;
                     @RedBullet.canceled += instance.OnRedBullet;
@@ -1281,8 +1234,6 @@ namespace UnityEngine.InputSystem
             void OnMove(InputAction.CallbackContext context);
             void OnLook(InputAction.CallbackContext context);
             void OnFire(InputAction.CallbackContext context);
-            void OnLookAxis(InputAction.CallbackContext context);
-            void OnSilverBullet(InputAction.CallbackContext context);
             void OnRedBullet(InputAction.CallbackContext context);
             void OnVioletBullet(InputAction.CallbackContext context);
             void OnYellowBullet(InputAction.CallbackContext context);

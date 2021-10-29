@@ -18,7 +18,6 @@ namespace Client
             inputMap = new InputActions();
             inputMap.Player.Enable();
             inputMap.Player.Fire.performed += InputShoot;
-            inputMap.Player.SilverBullet.performed += InputSilverBullet;
             inputMap.Player.RedBullet.performed += InputRedBullet;
             inputMap.Player.YellowBullet.performed += InputYellowBullet;
             inputMap.Player.VioletBullet.performed += InputVioletBullet;
@@ -30,8 +29,6 @@ namespace Client
             ref var topDownComponent = ref topDownFilter.Get1(default);
             topDownComponent.InputMoveDirection = inputMap.Player.Move.ReadValue<Vector2>();
             topDownComponent.InputLookDirection = inputMap.Player.Look.ReadValue<Vector2>();
-
-
         }
 
         public void InputShoot(InputAction.CallbackContext context)
