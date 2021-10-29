@@ -168,6 +168,21 @@ MonoBehaviour:
     - Name: transform
       Entry: 10
       Data: 1
+    - Name: direction
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: speed
       Entry: 4
       Data: 25
@@ -468,7 +483,7 @@ GameObject:
   - component: {fileID: 898543836886270612}
   - component: {fileID: 1358817121379866506}
   - component: {fileID: 3747006568399438633}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: ArrowRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -577,6 +592,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4499343966829412256}
     m_Modifications:
+    - target: {fileID: 1680459056, guid: 6f85a7f9300180f40826c95477fb1dc1, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1680459056, guid: 6f85a7f9300180f40826c95477fb1dc1, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -709,6 +728,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Trail
+      objectReference: {fileID: 0}
+    - target: {fileID: 6991895961939405160, guid: 6f85a7f9300180f40826c95477fb1dc1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7191763821635988776, guid: 6f85a7f9300180f40826c95477fb1dc1,
         type: 3}

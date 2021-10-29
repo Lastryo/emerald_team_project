@@ -40,6 +40,42 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "SilverBullet",
+                    "type": "Button",
+                    "id": "7a7ee8ac-0fdd-4cd8-8fe5-1f06b5365da3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RedBullet",
+                    "type": "Button",
+                    "id": "76525211-36f5-461c-8963-2bf828c7905c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "VioletBullet",
+                    "type": "Button",
+                    "id": "2a5caaf9-2263-4419-8a5c-61c234901755",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "YellowBullet",
+                    "type": "Button",
+                    "id": "7dbe1248-7564-4fd2-a04f-fa948e736ba3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -282,6 +318,50 @@
                     "processors": "NormalizeVector2",
                     "groups": "Keyboard&Mouse",
                     "action": "LookAxis",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "53f6e11f-23ee-4c3b-86df-cb3065ebb9d3",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SilverBullet",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dfb4bebb-10e9-421f-b4d5-d4c39cfc2d70",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RedBullet",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ee916572-1ff6-4be5-af93-9176535a521e",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VioletBullet",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2e8a5770-fdb3-4798-a2b0-6de73b6869e3",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "YellowBullet",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

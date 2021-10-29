@@ -38,6 +38,9 @@ MonoBehaviour:
     ReferencedUnityObjects:
     - {fileID: 1147756413764498608}
     - {fileID: 3367554579585077331, guid: a3d6fbc5215faca4c986d87583193d28, type: 3}
+    - {fileID: 3367554579585077331, guid: 23e1d6f33c42cfc49b1739d67a5f0a51, type: 3}
+    - {fileID: 3367554579585077331, guid: b98ec7cd368e29e45af171a42aeab1a1, type: 3}
+    - {fileID: 3367554579585077331, guid: 31f63a8437d66874e905aa1bd96df891, type: 3}
     - {fileID: 7022031489462045404}
     SerializedBytesString: 
     Prefab: {fileID: 0}
@@ -62,12 +65,72 @@ MonoBehaviour:
     - Name: point
       Entry: 10
       Data: 0
+    - Name: data
+      Entry: 7
+      Data: 2|Client.BulletData[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: Client.BulletData, Assembly-CSharp
     - Name: Bullet
       Entry: 10
       Data: 1
-    - Name: animation
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: Client.BulletData, Assembly-CSharp
+    - Name: Bullet
       Entry: 10
       Data: 2
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: Client.BulletData, Assembly-CSharp
+    - Name: Bullet
+      Entry: 10
+      Data: 3
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: Client.BulletData, Assembly-CSharp
+    - Name: Bullet
+      Entry: 10
+      Data: 4
+    - Name: type
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: animation
+      Entry: 10
+      Data: 5
+    - Name: currentType
+      Entry: 3
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
