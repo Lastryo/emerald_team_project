@@ -6933,7 +6933,7 @@ MonoBehaviour:
       Data: 3
     - Name: MoveSpeed
       Entry: 4
-      Data: 5
+      Data: 4
     - Name: InputMoveDirection
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
