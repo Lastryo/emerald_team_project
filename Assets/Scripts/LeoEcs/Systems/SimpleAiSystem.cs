@@ -58,15 +58,22 @@ namespace Client
 
         private void Attack(ref EcsEntity entity)
         {
+            ref var ai = ref entity.Get<TopDownAiComponent>();
+            if (ai.animation.GetBool("Move"))
+                ai.animation.SetBool("Move", false);
             if (entity.Has<InAttackMarkerComponent>()) return;
-            Debug.Log("Надо атаковать");
-            entity.Get<InAttackMarkerComponent>();
 
+            Debug.Log("Надо атаковать");
+            ai.animation.SetInteger("ActionAttack", Random.Range(0, 4));
+            ai.animation.SetTrigger("Attack");
+            entity.Get<InAttackMarkerComponent>();
         }
 
         private void RunToTarget(ref TopDownAiComponent aiComponent, ref TopDownControllerComponent characterComponent)
         {
             aiComponent.agent.SetDestination(characterComponent.Transform.position);
+            if (aiComponent.animation.GetBool("Move")) return;
+            aiComponent.animation.SetBool("Move", true);
         }
     }
 
