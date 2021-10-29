@@ -30,7 +30,17 @@ namespace Client
                         if (hpComponent.HP > changeHPComponent.Value)
                         {
                             hpComponent.HP -= changeHPComponent.Value;
+
                             //анимаци€ получени€ урона
+                            if (entity.Has<TopDownControllerComponent>())
+                                entity.Get<AnimationComponent>().animator.SetTrigger("Hit");
+
+                            if (entity.Has<TopDownAiComponent>())
+                            {
+                                entity.Get<StompComponent>().delay = 0.4f;
+                                entity.Get<TopDownAiComponent>().animation.SetTrigger("Hit");
+                            }
+
                             Debug.Log($"ѕолучил урон {changeHPComponent.Value}");
                         }
                         else
