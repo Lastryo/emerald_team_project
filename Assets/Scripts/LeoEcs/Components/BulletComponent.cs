@@ -9,6 +9,8 @@ namespace Client
         public MeshRenderer bulletMesh;
         public Transform transform;
 
+        public Vector3 direction;
+
         public float speed;
 
         public void SetBulletColor(Color color)

@@ -18,7 +18,7 @@ namespace Client
 
             if (Cursor.visible)
                 Cursor.visible = false;
-                
+
             foreach (var index in _characterFilter)
             {
                 ref var topDownComponent = ref _characterFilter.Get1(index);
@@ -28,10 +28,10 @@ namespace Client
                 topDownComponent.FinalLookPosition.y = topDownComponent.Transform.position.y;
                 topDownComponent.ModelTransform.LookAt(topDownComponent.FinalLookPosition);
 
-              //  if (cube == null)
-              //      cube = GameObject.CreatePrimitive(PrimitiveType.Cube).transform;
+                if (cube == null)
+                    cube = GameObject.CreatePrimitive(PrimitiveType.Cube).transform;
 
-              //  cube.position = topDownComponent.FinalLookPosition;
+                cube.position = topDownComponent.FinalLookPosition;
                 if (uiAimFilter.IsEmpty()) return;
                 uiAimFilter.Get1(default).rect.position = topDownComponent.InputLookDirection;
             }
@@ -44,7 +44,7 @@ namespace Client
             if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, LayerManager.MouseRaycastingLayerMask))
             {
                 var hitPoint = hitInfo.point;
-                hitPoint.y = 0;
+                hitPoint.y = 1;
                 return hitPoint;
             }
             return Vector3.zero;

@@ -59,11 +59,14 @@ namespace Client
                     ref var bulletEntity = ref isReadyToShootFilter.GetEntity(default);
                     ref var bulletComponent = ref isReadyToShootFilter.Get1(default);
                     ref var characterEntity = ref _characterFilter.GetEntity(default);
+                    ref var topDownComponent = ref _characterFilter.Get1(default);
 
                     ref var animationComponent = ref characterEntity.Get<AnimationComponent>();
-                    var ea = bulletComponent.transform.transform.rotation.eulerAngles;
-                    bulletComponent.transform.transform.rotation = Quaternion.Euler(-90f, ea.y, ea.z);
-
+                    ref var projectilePointer = ref characterEntity.Get<ProjectilePointerComponent>();
+                    var heading = topDownComponent.FinalLookPosition - topDownComponent.Transform.position;
+                    var dir = heading.normalized;
+                    bulletComponent.direction = dir;
+                    bulletComponent.transform.rotation = projectilePointer.ProjectilePointer.rotation;
                     animationComponent.animator.SetTrigger("Shoot");
                     pointEntity.Get<CrossbowComponent>().animation.SetTrigger("Shoot");
                     isPuched = true;
