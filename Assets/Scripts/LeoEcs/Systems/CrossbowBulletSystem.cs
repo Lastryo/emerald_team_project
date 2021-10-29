@@ -1,3 +1,4 @@
+using System.Linq;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace Client
         readonly EcsFilter<CrossbowComponent> pointFilter = null;
         readonly EcsFilter<BulletComponent>.Exclude<BulletShootingComponent> isReadyToShootFilter = null;
         readonly EcsFilter<TopDownControllerComponent, FollowCameraComponent>.Exclude<DeathComponent> _characterFilter;
+        readonly EcsFilter<ChangeBulletEvent> changeBulletEvent = null;
         readonly EcsFilter<ShootEvent> shootEvent = null;
         readonly EcsFilter<ShootInputEvent> shootInputEvent = null;
 
@@ -16,10 +18,39 @@ namespace Client
 
         public void Run()
         {
+            ChangeBullet();
             AddBulletToWeapon();
             Shoot();
             ShootProcess();
         }
+
+        private void ChangeBullet()
+        {
+            if (changeBulletEvent.IsEmpty()) return;
+            if (pointFilter.IsEmpty()) return;
+
+            foreach (var item in changeBulletEvent)
+            {
+                ref var evt = ref changeBulletEvent.Get1(item);
+                ref var entity = ref pointFilter.GetEntity(default);
+                pointFilter.Get1(default).currentType = evt.Type;
+                GameObject.Destroy(isReadyToShootFilter.Get1(default).transform.gameObject);
+                isReadyToShootFilter.GetEntity(default).Destroy();
+                CreateBullet(default);
+            }
+        }
+
+        private void CreateBullet(int index)
+        {
+            ref var pointComponent = ref pointFilter.Get1(index);
+            ref var entity = ref pointFilter.GetEntity(index);
+
+            var currentType = pointComponent.currentType;
+            var neededData = pointComponent.data.FirstOrDefault(x => x.type == currentType);
+            var bullet = GameObject.Instantiate(neededData.Bullet, pointComponent.point.position, Quaternion.identity).transform;
+            entity.Get<BusyProjectilePointComponent>().Bullet = bullet;
+        }
+
 
         private void AddBulletToWeapon()
         {
@@ -37,9 +68,7 @@ namespace Client
                 }
                 else
                 {
-                    ref var pointComponent = ref pointFilter.Get1(item);
-                    var bullet = GameObject.Instantiate(pointFilter.Get1(item).Bullet, pointComponent.point.position, Quaternion.identity).transform;
-                    entity.Get<BusyProjectilePointComponent>().Bullet = bullet;
+                    CreateBullet(item);
                 }
             }
         }

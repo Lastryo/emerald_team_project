@@ -76,6 +76,7 @@ namespace Client
                 // inject service instances here (order doesn't important), for example:
                 // .Inject (new CameraService ())
                 // .Inject (new NavMeshSupport ())
+                .OneFrame<ChangeBulletEvent>()
                 .OneFrame<DamageEvent>()
                 .OneFrame<ShootInputEvent>()
                 .OneFrame<ShootEvent>()

@@ -64,6 +64,42 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SilverBullet"",
+                    ""type"": ""Button"",
+                    ""id"": ""7a7ee8ac-0fdd-4cd8-8fe5-1f06b5365da3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RedBullet"",
+                    ""type"": ""Button"",
+                    ""id"": ""76525211-36f5-461c-8963-2bf828c7905c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""VioletBullet"",
+                    ""type"": ""Button"",
+                    ""id"": ""2a5caaf9-2263-4419-8a5c-61c234901755"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""YellowBullet"",
+                    ""type"": ""Button"",
+                    ""id"": ""7dbe1248-7564-4fd2-a04f-fa948e736ba3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -306,6 +342,50 @@ namespace UnityEngine.InputSystem
                     ""processors"": ""NormalizeVector2"",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""LookAxis"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""53f6e11f-23ee-4c3b-86df-cb3065ebb9d3"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SilverBullet"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dfb4bebb-10e9-421f-b4d5-d4c39cfc2d70"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RedBullet"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ee916572-1ff6-4be5-af93-9176535a521e"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VioletBullet"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e8a5770-fdb3-4798-a2b0-6de73b6869e3"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""YellowBullet"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -897,6 +977,10 @@ namespace UnityEngine.InputSystem
             m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
             m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
             m_Player_LookAxis = m_Player.FindAction("LookAxis", throwIfNotFound: true);
+            m_Player_SilverBullet = m_Player.FindAction("SilverBullet", throwIfNotFound: true);
+            m_Player_RedBullet = m_Player.FindAction("RedBullet", throwIfNotFound: true);
+            m_Player_VioletBullet = m_Player.FindAction("VioletBullet", throwIfNotFound: true);
+            m_Player_YellowBullet = m_Player.FindAction("YellowBullet", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -972,6 +1056,10 @@ namespace UnityEngine.InputSystem
         private readonly InputAction m_Player_Look;
         private readonly InputAction m_Player_Fire;
         private readonly InputAction m_Player_LookAxis;
+        private readonly InputAction m_Player_SilverBullet;
+        private readonly InputAction m_Player_RedBullet;
+        private readonly InputAction m_Player_VioletBullet;
+        private readonly InputAction m_Player_YellowBullet;
         public struct PlayerActions
         {
             private @InputActions m_Wrapper;
@@ -980,6 +1068,10 @@ namespace UnityEngine.InputSystem
             public InputAction @Look => m_Wrapper.m_Player_Look;
             public InputAction @Fire => m_Wrapper.m_Player_Fire;
             public InputAction @LookAxis => m_Wrapper.m_Player_LookAxis;
+            public InputAction @SilverBullet => m_Wrapper.m_Player_SilverBullet;
+            public InputAction @RedBullet => m_Wrapper.m_Player_RedBullet;
+            public InputAction @VioletBullet => m_Wrapper.m_Player_VioletBullet;
+            public InputAction @YellowBullet => m_Wrapper.m_Player_YellowBullet;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1001,6 +1093,18 @@ namespace UnityEngine.InputSystem
                     @LookAxis.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookAxis;
                     @LookAxis.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookAxis;
                     @LookAxis.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookAxis;
+                    @SilverBullet.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSilverBullet;
+                    @SilverBullet.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSilverBullet;
+                    @SilverBullet.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSilverBullet;
+                    @RedBullet.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRedBullet;
+                    @RedBullet.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRedBullet;
+                    @RedBullet.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRedBullet;
+                    @VioletBullet.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnVioletBullet;
+                    @VioletBullet.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnVioletBullet;
+                    @VioletBullet.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnVioletBullet;
+                    @YellowBullet.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnYellowBullet;
+                    @YellowBullet.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnYellowBullet;
+                    @YellowBullet.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnYellowBullet;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -1017,6 +1121,18 @@ namespace UnityEngine.InputSystem
                     @LookAxis.started += instance.OnLookAxis;
                     @LookAxis.performed += instance.OnLookAxis;
                     @LookAxis.canceled += instance.OnLookAxis;
+                    @SilverBullet.started += instance.OnSilverBullet;
+                    @SilverBullet.performed += instance.OnSilverBullet;
+                    @SilverBullet.canceled += instance.OnSilverBullet;
+                    @RedBullet.started += instance.OnRedBullet;
+                    @RedBullet.performed += instance.OnRedBullet;
+                    @RedBullet.canceled += instance.OnRedBullet;
+                    @VioletBullet.started += instance.OnVioletBullet;
+                    @VioletBullet.performed += instance.OnVioletBullet;
+                    @VioletBullet.canceled += instance.OnVioletBullet;
+                    @YellowBullet.started += instance.OnYellowBullet;
+                    @YellowBullet.performed += instance.OnYellowBullet;
+                    @YellowBullet.canceled += instance.OnYellowBullet;
                 }
             }
         }
@@ -1177,6 +1293,10 @@ namespace UnityEngine.InputSystem
             void OnLook(InputAction.CallbackContext context);
             void OnFire(InputAction.CallbackContext context);
             void OnLookAxis(InputAction.CallbackContext context);
+            void OnSilverBullet(InputAction.CallbackContext context);
+            void OnRedBullet(InputAction.CallbackContext context);
+            void OnVioletBullet(InputAction.CallbackContext context);
+            void OnYellowBullet(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {

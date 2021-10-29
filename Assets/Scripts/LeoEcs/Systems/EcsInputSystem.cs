@@ -17,7 +17,11 @@ namespace Client
         {
             inputMap = new InputActions();
             inputMap.Player.Enable();
-            inputMap.Player.Fire.performed += Shoot;
+            inputMap.Player.Fire.performed += InputShoot;
+            inputMap.Player.SilverBullet.performed += InputSilverBullet;
+            inputMap.Player.RedBullet.performed += InputRedBullet;
+            inputMap.Player.YellowBullet.performed += InputYellowBullet;
+            inputMap.Player.VioletBullet.performed += InputVioletBullet;
         }
 
         public void Run()
@@ -27,12 +31,33 @@ namespace Client
             topDownComponent.InputMoveDirection = inputMap.Player.Move.ReadValue<Vector2>();
             topDownComponent.InputLookDirection = inputMap.Player.Look.ReadValue<Vector2>();
 
+
         }
 
-        public void Shoot(InputAction.CallbackContext context)
+        public void InputShoot(InputAction.CallbackContext context)
         {
             if (isReadyShoot.IsEmpty()) return;
             _world.NewEntity().Get<ShootInputEvent>();
+        }
+
+        public void InputRedBullet(InputAction.CallbackContext context)
+        {
+            _world.NewEntity().Get<ChangeBulletEvent>().Type = BulletType.Red;
+        }
+
+        public void InputYellowBullet(InputAction.CallbackContext context)
+        {
+            _world.NewEntity().Get<ChangeBulletEvent>().Type = BulletType.Yellow;
+        }
+
+        public void InputVioletBullet(InputAction.CallbackContext context)
+        {
+            _world.NewEntity().Get<ChangeBulletEvent>().Type = BulletType.Violet;
+        }
+
+        public void InputSilverBullet(InputAction.CallbackContext context)
+        {
+            _world.NewEntity().Get<ChangeBulletEvent>().Type = BulletType.Silver;
         }
     }
 
