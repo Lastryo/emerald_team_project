@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3910836452281990583}
   - component: {fileID: 3649956621174223244}
   - component: {fileID: 146264012122245956}
+  - component: {fileID: 7766142253688721665}
   m_Layer: 13
   m_Name: Enemy[Bear]
   m_TagString: Untagged
@@ -51,21 +52,58 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 7766142253688721665}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: Entity
+      Entry: 7
+      Data: Leopotam.Ecs.EcsEntity, Leopotam.Ecs
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: component
       Entry: 7
       Data: 0|Client.IComponent[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 3
     - Name: 
       Entry: 7
       Data: 1|Client.TopDownAiComponent, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|Client.TriggerComponent, Assembly-CSharp
+    - Name: <Mask>k__BackingField
+      Entry: 7
+      Data: UnityEngine.LayerMask, UnityEngine.CoreModule
+    - Name: 
+      Entry: 3
+      Data: 262144
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: UnityTrigger
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|Client.HPComponent, Assembly-CSharp
+    - Name: HP
+      Entry: 3
+      Data: 100
+    - Name: MaxHP
+      Entry: 3
+      Data: 100
     - Name: 
       Entry: 8
       Data: 
@@ -127,6 +165,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &7766142253688721665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92890038244491672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecef6d260e1c17140abd1ce146a97618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6622288165825251742
 PrefabInstance:
   m_ObjectHideFlags: 0

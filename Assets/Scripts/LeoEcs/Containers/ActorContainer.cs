@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ActorContainer : SerializedMonoBehaviour
 {
-    public EcsEntity Entity { get; set; }
+    public EcsEntity Entity;
     [SerializeField] private IComponent[] component = new IComponent[0];
 
     private bool isInitialized = false;
@@ -22,7 +22,7 @@ public class ActorContainer : SerializedMonoBehaviour
         Entity = EcsStartup.NewEntity(name);
         for (int i = 0; i < component.Length; i++)
         {
-            component[i]?.SetOwner(Entity, out component[i]);
+            component[i]?.SetOwner(ref Entity, out component[i]);
             if (component[i] is IHaveEntity haveEntity)
                 haveEntity.Entity = Entity;
         }

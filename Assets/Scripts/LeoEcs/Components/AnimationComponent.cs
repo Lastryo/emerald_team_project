@@ -12,12 +12,12 @@ namespace Client
         public string Doc => "Компонент который отвечает за...";
 #endif
         public Animator animator;
-        public void SetOwner(in EcsEntity entity)
+        public void SetOwner(ref EcsEntity entity)
         {
 
         }
 
-        public void SetOwner(in EcsEntity entity, out IComponent component)
+        public void SetOwner(ref EcsEntity entity, out IComponent component)
         {
             component = entity.Get<AnimationComponent>() = this;
         }

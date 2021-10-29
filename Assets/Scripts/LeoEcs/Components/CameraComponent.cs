@@ -14,7 +14,7 @@ namespace Client
 #endif
         public Camera camera;
         public CinemachineVirtualCamera virtualCamera;
-        public void SetOwner(in EcsEntity entity, out IComponent component)
+        public void SetOwner(ref EcsEntity entity, out IComponent component)
         {
             component = entity.Get<CameraComponent>() = this;
         }

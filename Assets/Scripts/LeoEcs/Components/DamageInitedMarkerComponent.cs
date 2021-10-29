@@ -3,7 +3,7 @@ using Sirenix.OdinInspector;
 
 namespace Client
 {
-    struct CharacterHpBarMarkerComponent : IComponent
+    struct DamageInitedMarkerComponent : IComponent
     {
 #if UNITY_EDITOR
         [ShowInInspector]
@@ -11,7 +11,7 @@ namespace Client
 #endif
         public void SetOwner(ref EcsEntity entity, out IComponent component)
         {
-            component = entity.Get<CharacterHpBarMarkerComponent>() = this;
+            component = entity.Get<DamageInitedMarkerComponent>() = this;
         }
     }
 }

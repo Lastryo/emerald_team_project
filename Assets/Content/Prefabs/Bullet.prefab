@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1079796165793683660}
   - component: {fileID: 2149504651600667339}
   - component: {fileID: 1132469109066284083}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4559181008788027480}
   - component: {fileID: 3993897528859810707}
   - component: {fileID: 194455336374561253}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,6 +144,12 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: Entity
+      Entry: 7
+      Data: Leopotam.Ecs.EcsEntity, Leopotam.Ecs
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: component
       Entry: 7
       Data: 0|Client.IComponent[], Assembly-CSharp
@@ -312,6 +318,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ArrowLowV2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 22643473a5191654bafa8cfd75bd3330,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22643473a5191654bafa8cfd75bd3330, type: 3}

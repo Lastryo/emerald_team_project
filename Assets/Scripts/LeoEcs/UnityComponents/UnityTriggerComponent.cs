@@ -5,6 +5,7 @@ namespace Client
 {
     public class UnityTriggerComponent : MonoBehaviour
     {
+        [HideInInspector]
         public EcsEntity Entity { get; set; }
 
         private void OnTriggerEnter(Collider other)
@@ -13,7 +14,7 @@ namespace Client
             if ((triggerComponent.Mask.value & (1 << other.transform.gameObject.layer)) > 0)
                 if (triggerComponent.InActions != null && triggerComponent.InActions.Count > 0)
                     foreach (var action in triggerComponent.InActions)
-                        action?.Invoke();
+                        action?.Invoke(Entity);
         }
 
         private void OnTriggerExit(Collider other)
@@ -22,7 +23,7 @@ namespace Client
             if ((triggerComponent.Mask.value & (1 << other.transform.gameObject.layer)) > 0)
                 if (triggerComponent.OutActions != null && triggerComponent.OutActions.Count > 0)
                     foreach (var action in triggerComponent.OutActions)
-                        action?.Invoke();
+                        action?.Invoke(Entity);
         }
 
         public void Activate()

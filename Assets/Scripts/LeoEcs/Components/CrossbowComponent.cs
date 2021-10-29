@@ -13,7 +13,7 @@ namespace Client
         [ShowInInspector]
         public string Doc => "Компонент который отвечает за хранение пули";
 #endif
-        public void SetOwner(in EcsEntity entity, out IComponent component)
+        public void SetOwner(ref EcsEntity entity, out IComponent component)
         {
             component = entity.Get<CrossbowComponent>() = this;
         }

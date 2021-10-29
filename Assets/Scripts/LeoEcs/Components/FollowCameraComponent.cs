@@ -16,7 +16,7 @@ namespace Client
 
         [HideInInspector]
         public Camera camera;
-        public void SetOwner(in EcsEntity entity, out IComponent component)
+        public void SetOwner(ref EcsEntity entity, out IComponent component)
         {
             component = entity.Get<FollowCameraComponent>() = this;
         }

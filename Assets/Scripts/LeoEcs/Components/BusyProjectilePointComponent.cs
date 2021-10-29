@@ -11,7 +11,7 @@ namespace Client
         [ShowInInspector]
         public string Doc => "Компонент маркер который наложен когда арбалет заряжен";
 #endif
-        public void SetOwner(in EcsEntity entity, out IComponent component)
+        public void SetOwner(ref EcsEntity entity, out IComponent component)
         {
             component = entity.Get<BusyProjectilePointComponent>() = this;
         }
