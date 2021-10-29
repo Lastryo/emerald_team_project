@@ -9,6 +9,7 @@ namespace Client
     {
         public NavMeshAgent agent;
         public Transform transform;
+        public Animator animation;
         public float attackRange;
         public int damage;
 
