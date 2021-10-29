@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 8.278828, g: 8.683983, b: 12.686539, a: 1}
+  m_IndirectSpecularColor: {r: 8.3002205, g: 8.698608, b: 12.690186, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15809,13 +15809,13 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[0]
       value: '"path":"component.[0]","value":{"$id":0,"$type":"Client.SpawnEnemyComponent,
-        Assembly-CSharp","Point":$eref:0,"Prefab":$eref:1,"SpawnInterval":15,"currentTime":1}'
+        Assembly-CSharp","Point":$eref:0,"Prefab":$eref:1,"SpawnInterval":2,"currentTime":10}'
       objectReference: {fileID: 0}
     - target: {fileID: 1480918699709258591, guid: 9ddb84a4760f9de4ea7432c82f9078a1,
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[1]
       value: '"path":"component.[0].currentTime","value":{"$id":0,"$type":"System.Single,
-        mscorlib",7}'
+        mscorlib",10}'
       objectReference: {fileID: 0}
     - target: {fileID: 1480918699709258591, guid: 9ddb84a4760f9de4ea7432c82f9078a1,
         type: 3}
@@ -15831,7 +15831,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[4]
       value: '"path":"component.[0].SpawnInterval","value":{"$id":0,"$type":"System.Single,
-        mscorlib",15}'
+        mscorlib",22}'
       objectReference: {fileID: 0}
     - target: {fileID: 1480918699709258591, guid: 9ddb84a4760f9de4ea7432c82f9078a1,
         type: 3}
@@ -22178,24 +22178,23 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 1480918699709258591, guid: 9ddb84a4760f9de4ea7432c82f9078a1,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 1480918699709258591, guid: 9ddb84a4760f9de4ea7432c82f9078a1,
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1480918699709258591, guid: 9ddb84a4760f9de4ea7432c82f9078a1,
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[0]
       value: '"path":"component.[0]","value":{"$id":0,"$type":"Client.SpawnEnemyComponent,
-        Assembly-CSharp","Point":$eref:0,"Prefab":$eref:1,"SpawnInterval":10,"currentTime":6}'
+        Assembly-CSharp","Point":$eref:0,"Prefab":$eref:1,"SpawnInterval":1,"currentTime":8}'
       objectReference: {fileID: 0}
     - target: {fileID: 1480918699709258591, guid: 9ddb84a4760f9de4ea7432c82f9078a1,
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[1]
       value: '"path":"component.[0].currentTime","value":{"$id":0,"$type":"System.Single,
-        mscorlib",6}'
+        mscorlib",8}'
       objectReference: {fileID: 0}
     - target: {fileID: 1480918699709258591, guid: 9ddb84a4760f9de4ea7432c82f9078a1,
         type: 3}
@@ -22205,12 +22204,18 @@ PrefabInstance:
     - target: {fileID: 1480918699709258591, guid: 9ddb84a4760f9de4ea7432c82f9078a1,
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[3]
-      value: '"path":"component.[0].Prefab","value":$eref:2'
+      value: '"path":"component.[0].Prefab","value":$eref:1'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480918699709258591, guid: 9ddb84a4760f9de4ea7432c82f9078a1,
+        type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[4]
+      value: '"path":"component.[0].SpawnInterval","value":{"$id":0,"$type":"System.Single,
+        mscorlib",16}'
       objectReference: {fileID: 0}
     - target: {fileID: 1480918699709258591, guid: 9ddb84a4760f9de4ea7432c82f9078a1,
         type: 3}
       propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1480918699709258591, guid: 9ddb84a4760f9de4ea7432c82f9078a1,
         type: 3}
@@ -22220,12 +22225,6 @@ PrefabInstance:
     - target: {fileID: 1480918699709258591, guid: 9ddb84a4760f9de4ea7432c82f9078a1,
         type: 3}
       propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[1]
-      value: 
-      objectReference: {fileID: 678758044937718680, guid: e91a1121fe307c44e884f20376de7721,
-        type: 3}
-    - target: {fileID: 1480918699709258591, guid: 9ddb84a4760f9de4ea7432c82f9078a1,
-        type: 3}
-      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[2]
       value: 
       objectReference: {fileID: 92890038244491672, guid: 4ed12540b9bfe5b46b2c88273f991b19,
         type: 3}
@@ -33393,13 +33392,13 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[0]
       value: '"path":"component.[0]","value":{"$id":0,"$type":"Client.SpawnEnemyComponent,
-        Assembly-CSharp","Point":$eref:0,"Prefab":$eref:1,"SpawnInterval":10,"currentTime":1}'
+        Assembly-CSharp","Point":$eref:0,"Prefab":$eref:1,"SpawnInterval":1,"currentTime":10}'
       objectReference: {fileID: 0}
     - target: {fileID: 1480918699709258591, guid: 9ddb84a4760f9de4ea7432c82f9078a1,
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[1]
       value: '"path":"component.[0].currentTime","value":{"$id":0,"$type":"System.Single,
-        mscorlib",4}'
+        mscorlib",10}'
       objectReference: {fileID: 0}
     - target: {fileID: 1480918699709258591, guid: 9ddb84a4760f9de4ea7432c82f9078a1,
         type: 3}
@@ -33415,7 +33414,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[4]
       value: '"path":"component.[0].SpawnInterval","value":{"$id":0,"$type":"System.Single,
-        mscorlib",10}'
+        mscorlib",11}'
       objectReference: {fileID: 0}
     - target: {fileID: 1480918699709258591, guid: 9ddb84a4760f9de4ea7432c82f9078a1,
         type: 3}

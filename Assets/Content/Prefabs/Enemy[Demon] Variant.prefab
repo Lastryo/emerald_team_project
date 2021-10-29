@@ -531,10 +531,10 @@ MonoBehaviour:
       Data: 2
     - Name: attackRange
       Entry: 4
-      Data: 1
+      Data: 2
     - Name: damage
       Entry: 3
-      Data: 10
+      Data: 15
     - Name: 
       Entry: 8
       Data: 
@@ -638,7 +638,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.4
-  m_Speed: 4
+  m_Speed: 4.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 180
