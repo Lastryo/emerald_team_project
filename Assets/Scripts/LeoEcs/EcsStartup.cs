@@ -59,6 +59,7 @@ namespace Client
             .Add(new ShootSystem())
             .Add(new DamageSystem())
             .Add(new HealthSystem())
+            .Add(new SimpleAiSystem())
 
 
 
@@ -76,6 +77,7 @@ namespace Client
                 // inject service instances here (order doesn't important), for example:
                 // .Inject (new CameraService ())
                 // .Inject (new NavMeshSupport ())
+                .OneFrame<ResetEnemyAttackEvent>()
                 .OneFrame<ChangeBulletEvent>()
                 .OneFrame<DamageEvent>()
                 .OneFrame<ShootInputEvent>()

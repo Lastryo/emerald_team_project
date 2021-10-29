@@ -53,6 +53,8 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
+    - {fileID: 146264012122245956}
+    - {fileID: 2593965136739162698}
     - {fileID: 7766142253688721665}
     - {fileID: 1942350098}
     SerializedBytesString: 
@@ -75,6 +77,18 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 1|Client.TopDownAiComponent, Assembly-CSharp
+    - Name: agent
+      Entry: 10
+      Data: 0
+    - Name: transform
+      Entry: 10
+      Data: 1
+    - Name: attackRange
+      Entry: 4
+      Data: 3
+    - Name: damage
+      Entry: 3
+      Data: 10
     - Name: 
       Entry: 8
       Data: 
@@ -92,7 +106,7 @@ MonoBehaviour:
       Data: 
     - Name: UnityTrigger
       Entry: 10
-      Data: 0
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -113,7 +127,7 @@ MonoBehaviour:
       Data: 4|Client.RagdollComponent, Assembly-CSharp
     - Name: Ragdoll
       Entry: 10
-      Data: 1
+      Data: 3
     - Name: 
       Entry: 8
       Data: 
