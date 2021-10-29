@@ -47,6 +47,26 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+--- !u!95 &7022031489462045404
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3469258751815746773}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3a956b8331187aa4a91dcc862074ae80, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4606002782361303233
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,10 +175,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5960997642085333049, guid: b4648641e60553c4fb75b0a6efa3ba7e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 94a76d790ddc6dd44ae97762f32fbde2, type: 2}
+    - target: {fileID: -5960997642085333049, guid: b4648641e60553c4fb75b0a6efa3ba7e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f5c852704d9716549b93c03e8563ada6, type: 2}
     - target: {fileID: 919132149155446097, guid: b4648641e60553c4fb75b0a6efa3ba7e,
         type: 3}
       propertyPath: m_Name
-      value: crosbow
+      value: crosbow Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2504684441949758045, guid: b4648641e60553c4fb75b0a6efa3ba7e,
         type: 3}
