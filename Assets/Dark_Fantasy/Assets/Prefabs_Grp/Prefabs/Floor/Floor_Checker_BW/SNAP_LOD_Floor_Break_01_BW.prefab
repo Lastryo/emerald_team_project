@@ -430,6 +430,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8064944755805271676, guid: 0962617addca17e4a92de2f6403453a7,
         type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064944755805271676, guid: 0962617addca17e4a92de2f6403453a7,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6613baa2a44f7c6409e8f9cce58f1669, type: 2}
