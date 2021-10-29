@@ -10,11 +10,15 @@ namespace Client
         readonly EcsFilter<BulletComponent>.Exclude<BulletShootingComponent> isReadyToShootFilter = null;
         readonly EcsFilter<TopDownControllerComponent, FollowCameraComponent>.Exclude<DeathComponent> _characterFilter;
         readonly EcsFilter<ShootEvent> shootEvent = null;
+        readonly EcsFilter<ShootInputEvent> shootInputEvent = null;
+
+        private bool isPuched = false;
 
         public void Run()
         {
             AddBulletToWeapon();
             Shoot();
+            ShootProcess();
         }
 
         private void AddBulletToWeapon()
@@ -43,13 +47,13 @@ namespace Client
         private void Shoot()
         {
             if (isReadyToShootFilter.IsEmpty()) return;
-            if (shootEvent.IsEmpty()) return;
+            if (shootInputEvent.IsEmpty()) return;
             if (pointFilter.IsEmpty()) return;
 
             foreach (var item in pointFilter)
             {
                 ref var pointEntity = ref pointFilter.GetEntity(default);
-                if (pointEntity.Has<BusyProjectilePointComponent>())
+                if (!isPuched)
                 {
                     Debug.Log("Выстрел");
                     ref var bulletEntity = ref isReadyToShootFilter.GetEntity(default);
@@ -59,11 +63,29 @@ namespace Client
                     ref var animationComponent = ref characterEntity.Get<AnimationComponent>();
                     var ea = bulletComponent.transform.transform.rotation.eulerAngles;
                     bulletComponent.transform.transform.rotation = Quaternion.Euler(-90f, ea.y, ea.z);
-                    bulletEntity.Get<BulletShootingComponent>();
-                    pointEntity.Del<BusyProjectilePointComponent>();
+
                     animationComponent.animator.SetTrigger("Shoot");
                     pointEntity.Get<CrossbowComponent>().animation.SetTrigger("Shoot");
+                    isPuched = true;
                 }
+            }
+        }
+
+        private void ShootProcess()
+        {
+            if (shootEvent.IsEmpty()) return;
+            if (pointFilter.IsEmpty()) return;
+            if (isReadyToShootFilter.IsEmpty()) return;
+            if (!isPuched) return;
+            ref var bulletEntity = ref isReadyToShootFilter.GetEntity(default);
+            ref var bulletComponent = ref isReadyToShootFilter.Get1(default);
+            ref var pointEntity = ref pointFilter.GetEntity(default);
+
+            foreach (var item in pointFilter)
+            {
+                bulletEntity.Get<BulletShootingComponent>();
+                pointEntity.Del<BusyProjectilePointComponent>();
+                isPuched = false;
             }
         }
     }

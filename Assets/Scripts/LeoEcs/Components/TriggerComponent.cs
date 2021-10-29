@@ -22,10 +22,10 @@ namespace Client
             {
                 UnityTrigger.GetComponent<Collider>().isTrigger = value;
 
-                /* if (!value)
-                     if (OutActions != null && OutActions.Count > 0)
-                         foreach (var action in OutActions)
-                             action?.Invoke();*/
+                if (!value)
+                    if (OutActions != null && OutActions.Count > 0)
+                        foreach (var action in OutActions)
+                            action?.Invoke();
             }
         }
 

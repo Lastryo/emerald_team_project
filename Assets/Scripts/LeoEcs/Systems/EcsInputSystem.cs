@@ -32,7 +32,7 @@ namespace Client
         public void Shoot(InputAction.CallbackContext context)
         {
             if (isReadyShoot.IsEmpty()) return;
-            _world.NewEntity().Get<ShootEvent>();
+            _world.NewEntity().Get<ShootInputEvent>();
         }
     }
 
