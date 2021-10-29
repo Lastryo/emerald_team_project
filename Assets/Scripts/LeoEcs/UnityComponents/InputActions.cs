@@ -347,19 +347,8 @@ namespace UnityEngine.InputSystem
                 },
                 {
                     ""name"": """",
-                    ""id"": ""53f6e11f-23ee-4c3b-86df-cb3065ebb9d3"",
-                    ""path"": ""<Keyboard>/1"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SilverBullet"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""dfb4bebb-10e9-421f-b4d5-d4c39cfc2d70"",
-                    ""path"": ""<Keyboard>/2"",
+                    ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -370,7 +359,7 @@ namespace UnityEngine.InputSystem
                 {
                     ""name"": """",
                     ""id"": ""ee916572-1ff6-4be5-af93-9176535a521e"",
-                    ""path"": ""<Keyboard>/3"",
+                    ""path"": ""<Keyboard>/2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -381,7 +370,7 @@ namespace UnityEngine.InputSystem
                 {
                     ""name"": """",
                     ""id"": ""2e8a5770-fdb3-4798-a2b0-6de73b6869e3"",
-                    ""path"": ""<Keyboard>/4"",
+                    ""path"": ""<Keyboard>/3"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

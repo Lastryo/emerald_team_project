@@ -7,7 +7,7 @@ namespace Client
 {
     public interface ITriggerComponent : IComponent
     {
-        List<Action<EcsEntity>> InActions { get; set; }
-        List<Action<EcsEntity>> OutActions { get; set; }
+        List<Action<EcsEntity, EcsEntity>> InActions { get; set; }
+        List<Action<EcsEntity, EcsEntity>> OutActions { get; set; }
     }
 }

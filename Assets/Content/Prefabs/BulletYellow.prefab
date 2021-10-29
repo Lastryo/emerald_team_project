@@ -158,7 +158,7 @@ MonoBehaviour:
       Data: 0|Client.IComponent[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
       Data: 1|Client.BulletComponent, Assembly-CSharp
@@ -168,6 +168,21 @@ MonoBehaviour:
     - Name: transform
       Entry: 10
       Data: 1
+    - Name: direction
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: speed
       Entry: 4
       Data: 25
@@ -189,6 +204,15 @@ MonoBehaviour:
     - Name: UnityTrigger
       Entry: 10
       Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|Client.EnemyTypeComponent, Assembly-CSharp
+    - Name: Type
+      Entry: 3
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
