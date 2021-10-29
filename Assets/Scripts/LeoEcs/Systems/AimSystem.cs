@@ -28,10 +28,6 @@ namespace Client
                 topDownComponent.FinalLookPosition.y = topDownComponent.Transform.position.y;
                 topDownComponent.ModelTransform.LookAt(topDownComponent.FinalLookPosition);
 
-                if (cube == null)
-                    cube = GameObject.CreatePrimitive(PrimitiveType.Cube).transform;
-
-                cube.position = topDownComponent.FinalLookPosition;
                 if (uiAimFilter.IsEmpty()) return;
                 uiAimFilter.Get1(default).rect.position = topDownComponent.InputLookDirection;
             }
