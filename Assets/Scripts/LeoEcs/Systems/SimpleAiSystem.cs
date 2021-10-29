@@ -15,6 +15,8 @@ namespace Client
         {
             if (enemyFilter.IsEmpty()) return;
             if (characterFilter.IsEmpty()) return;
+
+            if (Stomp()) return;
             ResetAttack();
 
             foreach (var item in enemyFilter)
@@ -38,6 +40,7 @@ namespace Client
         {
             if (enemyFilter.IsEmpty()) return;
             if (resetEventFilter.IsEmpty()) return;
+
 
             foreach (var evt in resetEventFilter)
             {
@@ -65,6 +68,33 @@ namespace Client
             ai.animation.SetInteger("ActionAttack", Random.Range(0, 4));
             ai.animation.SetTrigger("Attack");
             entity.Get<InAttackMarkerComponent>();
+        }
+
+
+        private bool Stomp()
+        {
+            if (enemyFilter.IsEmpty()) return false;
+            foreach (var item in enemyFilter)
+            {
+                ref var entity = ref enemyFilter.GetEntity(item);
+                if (entity.Has<StompComponent>())
+                {
+                    ref var stomp = ref entity.Get<StompComponent>();
+                    if (stomp.currentDelay >= stomp.delay)
+                    {
+                        entity.Del<StompComponent>();
+                        entity.Get<TopDownAiComponent>().agent.isStopped = false;
+                        return false;
+                    }
+                    else
+                    {
+                        stomp.currentDelay += Time.deltaTime;
+                        entity.Get<TopDownAiComponent>().agent.isStopped = true;
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
         private void RunToTarget(ref TopDownAiComponent aiComponent, ref TopDownControllerComponent characterComponent)
