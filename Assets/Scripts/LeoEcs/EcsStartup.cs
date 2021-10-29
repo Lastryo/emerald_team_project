@@ -56,6 +56,7 @@ namespace Client
             .Add(new CameraFollowSystem())
             .Add(new AimSystem())
             .Add(new CrossbowBulletSystem())
+            .Add(new ShootSystem())
 
 
 

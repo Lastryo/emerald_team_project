@@ -6,8 +6,9 @@ namespace Client
     sealed class CrossbowBulletSystem : IEcsRunSystem
     {
         readonly EcsWorld _world = null;
-        readonly EcsFilter<ProjectilePointComponent>.Exclude<BusyProjectilePointComponent> freePointFilter = null;
+        readonly EcsFilter<ProjectilePointComponent> pointFilter = null;
         readonly EcsFilter<BulletComponent>.Exclude<BulletShootingComponent> isReadyToShootFilter = null;
+        readonly EcsFilter<TopDownControllerComponent, FollowCameraComponent>.Exclude<DeathComponent> _characterFilter;
         readonly EcsFilter<ShootEvent> shootEvent = null;
 
 
@@ -19,14 +20,25 @@ namespace Client
 
         private void AddBulletToWeapon()
         {
-            if (freePointFilter.IsEmpty()) return;
+            if (pointFilter.IsEmpty()) return;
 
-            foreach (var item in freePointFilter)
+            foreach (var item in pointFilter)
             {
-                ref var pointComponent = ref freePointFilter.Get1(item);
-                ref var entity = ref freePointFilter.GetEntity(item);
-                GameObject.Instantiate(freePointFilter.Get1(item).Bullet, pointComponent.point);
-                entity.Get<BusyProjectilePointComponent>();
+                ref var entity = ref pointFilter.GetEntity(item);
+                if (entity.Has<BusyProjectilePointComponent>())
+                {
+                    ref var busyProjectioleComponent = ref entity.Get<BusyProjectilePointComponent>();
+                    ref var pointComponent = ref pointFilter.Get1(item);
+                    busyProjectioleComponent.Bullet.transform.position = pointComponent.point.position;
+                    busyProjectioleComponent.Bullet.transform.rotation = pointComponent.point.rotation;
+                }
+                else
+                {
+                    ref var pointComponent = ref pointFilter.Get1(item);
+                    var bullet = GameObject.Instantiate(pointFilter.Get1(item).Bullet, pointComponent.point.position, Quaternion.identity).transform;
+                    entity.Get<BusyProjectilePointComponent>().Bullet = bullet;
+                }
+
             }
         }
 
@@ -34,12 +46,22 @@ namespace Client
         {
             if (isReadyToShootFilter.IsEmpty()) return;
             if (shootEvent.IsEmpty()) return;
+            if (pointFilter.IsEmpty()) return;
 
-            Debug.Log("Выстрел");
-
-            // накинуть BulletShootingComponent  
-            // снять BusyProjectilePointComponent
-
+            foreach (var item in pointFilter)
+            {
+                ref var pointEntity = ref pointFilter.GetEntity(default);
+                if (pointEntity.Has<BusyProjectilePointComponent>())
+                {
+                    Debug.Log("Выстрел");
+                    ref var bulletEntity = ref isReadyToShootFilter.GetEntity(default);
+                    ref var bulletComponent = ref isReadyToShootFilter.Get1(default);
+                    var ea = bulletComponent.transform.transform.rotation.eulerAngles;
+                    bulletComponent.transform.transform.rotation = Quaternion.Euler(-90f, ea.y, ea.z);
+                    bulletEntity.Get<BulletShootingComponent>();
+                    pointEntity.Del<BusyProjectilePointComponent>();
+                }
+            }
         }
     }
 

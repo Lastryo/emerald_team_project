@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 8.297752, g: 8.696533, b: 12.688492, a: 1}
+  m_IndirectSpecularColor: {r: 8.307495, g: 8.705017, b: 12.694672, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9148,6 +9148,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1252257822074169425, guid: 21ba915be89323f45874e7ed90f1e574,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252257822074169425, guid: 21ba915be89323f45874e7ed90f1e574,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252257822074169425, guid: 21ba915be89323f45874e7ed90f1e574,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1904068367436233568, guid: 21ba915be89323f45874e7ed90f1e574,
         type: 3}
       propertyPath: serializationData.Prefab
@@ -9257,6 +9272,31 @@ PrefabInstance:
     - target: {fileID: 2758758529614176086, guid: 21ba915be89323f45874e7ed90f1e574,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914766865829774592, guid: 21ba915be89323f45874e7ed90f1e574,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914766865829774592, guid: 21ba915be89323f45874e7ed90f1e574,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086010682985261029, guid: 21ba915be89323f45874e7ed90f1e574,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086010682985261029, guid: 21ba915be89323f45874e7ed90f1e574,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086010682985261029, guid: 21ba915be89323f45874e7ed90f1e574,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6874918604693177716, guid: 21ba915be89323f45874e7ed90f1e574,

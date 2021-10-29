@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &313390723676518071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3469258751815746773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4139e201f240b374096126d85abe9b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 1147756413764498608}
+    - {fileID: 3367554579585077331, guid: a3d6fbc5215faca4c986d87583193d28, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: component
+      Entry: 7
+      Data: 0|Client.IComponent[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|Client.ProjectilePointComponent, Assembly-CSharp
+    - Name: point
+      Entry: 10
+      Data: 0
+    - Name: Bullet
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
 --- !u!1 &4606002782361303233
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,7 +71,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4606002782361303233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.000028, y: 0.000037, z: 0.000523}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -111,7 +158,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b4648641e60553c4fb75b0a6efa3ba7e,
         type: 3}
       propertyPath: m_Name
-      value: crosbow Variant
+      value: crosbow
       objectReference: {fileID: 0}
     - target: {fileID: 2504684441949758045, guid: b4648641e60553c4fb75b0a6efa3ba7e,
         type: 3}
@@ -140,6 +187,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 04b99d2d40d00fe46b9142f826fdc391, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4648641e60553c4fb75b0a6efa3ba7e, type: 3}
+--- !u!1 &3469258751815746773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b4648641e60553c4fb75b0a6efa3ba7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4387668932940118404}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4641190455816775777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -248556127157104155, guid: b4648641e60553c4fb75b0a6efa3ba7e,

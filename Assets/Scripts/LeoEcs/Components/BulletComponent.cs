@@ -7,6 +7,9 @@ namespace Client
     struct BulletComponent : IComponent
     {
         public MeshRenderer bulletMesh;
+        public Transform transform;
+
+        public float speed;
 
         public void SetBulletColor(Color color)
         {
