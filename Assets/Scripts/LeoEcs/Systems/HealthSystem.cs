@@ -36,6 +36,7 @@ namespace Client
                         {
                             hpComponent.HP = 0;
                             entity.Get<DeathComponent>();
+                            entity.Get<RagdollComponent>().Ragdoll.isActive = false;
                             Debug.Log($"Умер");
                             // анимация смерти
                         }
