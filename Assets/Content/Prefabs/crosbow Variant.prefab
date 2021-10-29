@@ -44,6 +44,12 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: Entity
+      Entry: 7
+      Data: Leopotam.Ecs.EcsEntity, Leopotam.Ecs
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: component
       Entry: 7
       Data: 0|Client.IComponent[], Assembly-CSharp
@@ -192,7 +198,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b4648641e60553c4fb75b0a6efa3ba7e,
         type: 3}
       propertyPath: m_Name
-      value: crosbow Variant
+      value: crosbow
       objectReference: {fileID: 0}
     - target: {fileID: 2504684441949758045, guid: b4648641e60553c4fb75b0a6efa3ba7e,
         type: 3}
