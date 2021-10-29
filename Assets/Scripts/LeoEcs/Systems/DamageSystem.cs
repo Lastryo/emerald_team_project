@@ -16,9 +16,11 @@ namespace Client
             {
                 ref var triggerComponent = ref notInitAiFilter.Get2(item);
                 ref var entity = ref notInitAiFilter.GetEntity(item);
-                triggerComponent.InActions.Add((e) =>
+                triggerComponent.InActions.Add((e, b) =>
                 {
-                    _world.NewEntity().Get<DamageEvent>().damagedEntity = e;
+                    ref var entity = ref _world.NewEntity().Get<DamageEvent>();
+                    entity.damagedEntity = e;
+                    entity.damagerEntity = b;
                 });
 
                 entity.Get<DamageInitedMarkerComponent>();
@@ -31,7 +33,13 @@ namespace Client
 
             foreach (var item in damageEvent)
             {
-                var entity = damageEvent.Get1(item).damagedEntity;
+                ref var evt = ref damageEvent.Get1(item);
+                var entity = evt.damagedEntity;
+                if (evt.damagerEntity.IsNull())
+                    continue;
+                if (evt.damagedEntity.Get<EnemyTypeComponent>().Type !=
+            evt.damagerEntity.Get<EnemyTypeComponent>().Type) continue;
+
                 ref var changeHP = ref entity.Get<ChangeHPComponent>();
                 changeHP.Type = ChangeHPComponent.ChangeHealthType.Damage;
                 changeHP.Value = 20;

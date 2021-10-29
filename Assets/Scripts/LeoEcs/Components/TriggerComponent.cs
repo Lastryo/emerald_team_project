@@ -15,14 +15,14 @@ namespace Client
         public LayerMask Mask { get; set; }
         public UnityTriggerComponent UnityTrigger;
 
-        public List<Action<EcsEntity>> InActions { get; set; }
-        public List<Action<EcsEntity>> OutActions { get; set; }
+        public List<Action<EcsEntity, EcsEntity>> InActions { get; set; }
+        public List<Action<EcsEntity, EcsEntity>> OutActions { get; set; }
 
         public void SetOwner(ref EcsEntity entity, out IComponent component)
         {
             ref var trigger = ref entity.Get<TriggerComponent>();
-            InActions = new List<Action<EcsEntity>>();
-            OutActions = new List<Action<EcsEntity>>();
+            InActions = new List<Action<EcsEntity, EcsEntity>>();
+            OutActions = new List<Action<EcsEntity, EcsEntity>>();
             component = trigger = this;
             UnityTrigger.Entity = entity;
         }
