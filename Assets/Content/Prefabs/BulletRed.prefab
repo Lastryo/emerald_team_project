@@ -308,7 +308,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 23.873241
   m_Range: 2
   m_SpotAngle: 30
@@ -536,7 +536,10 @@ VisualEffect:
     m_Vector3f:
       m_Array: []
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 1, y: 0, z: 0, w: 1}
+        m_Name: Color
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
@@ -733,13 +736,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7191763821635988776, guid: 6f85a7f9300180f40826c95477fb1dc1,
         type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.5
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7191763821635988776, guid: 6f85a7f9300180f40826c95477fb1dc1,
         type: 3}
-      propertyPath: InitialModule.startSizeY.scalar
-      value: 0.5
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191763821635988776, guid: 6f85a7f9300180f40826c95477fb1dc1,
+        type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.a
+      value: 0.77254903
       objectReference: {fileID: 0}
     - target: {fileID: 7191763821635988776, guid: 6f85a7f9300180f40826c95477fb1dc1,
         type: 3}
