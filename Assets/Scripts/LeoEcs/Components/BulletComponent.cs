@@ -13,6 +13,8 @@ namespace Client
 
         public float speed;
 
+        public float coveredDistance;
+
         public void SetBulletColor(Color color)
         {
             bulletMesh.material.color = color;

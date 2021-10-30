@@ -52,6 +52,7 @@ namespace Client
                             {
                                 if (deathScreenFilter.IsEmpty()) return;
                                 deathScreenFilter.Get1(default).deathScreen.gameObject.SetActive(true);
+                                Cursor.visible = true;
                             }
 
                             if (entity.Has<TopDownAiComponent>())

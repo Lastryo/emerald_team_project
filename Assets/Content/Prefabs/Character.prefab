@@ -6937,7 +6937,7 @@ MonoBehaviour:
       Data: 4
     - Name: Range
       Entry: 4
-      Data: 0
+      Data: 20
     - Name: InputMoveDirection
       Entry: 7
       Data: UnityEngine.Vector2, UnityEngine.CoreModule

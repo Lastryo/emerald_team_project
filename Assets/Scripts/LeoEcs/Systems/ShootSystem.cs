@@ -8,6 +8,7 @@ namespace Client
 
         readonly EcsWorld _world = null;
         readonly EcsFilter<BulletComponent, BulletShootingComponent> shootingBulletFilter;
+        readonly EcsFilter<TopDownControllerComponent, FollowCameraComponent>.Exclude<DeathComponent> _characterFilter;
 
         public void Run()
         {
@@ -17,6 +18,13 @@ namespace Client
                 ref var bulletComponent = ref shootingBulletFilter.Get1(item);
 
                 bulletComponent.transform.position += bulletComponent.direction * bulletComponent.speed * Time.deltaTime;
+
+                if (bulletComponent.coveredDistance >= _characterFilter.Get1(default).Range)
+                {
+                    GameObject.Destroy(bulletComponent.transform.gameObject);
+                    shootingBulletFilter.GetEntity(item).Destroy();
+
+                }
             }
         }
     }

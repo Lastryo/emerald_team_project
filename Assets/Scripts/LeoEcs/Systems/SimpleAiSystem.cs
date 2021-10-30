@@ -16,15 +16,17 @@ namespace Client
             if (enemyFilter.IsEmpty()) return;
             if (characterFilter.IsEmpty()) return;
 
+
+
             ResetAttack();
-            
-            if (Stomp()) return;
+
             foreach (var item in enemyFilter)
             {
                 ref var enemyController = ref enemyFilter.Get1(item);
                 ref var characterController = ref characterFilter.Get1(default);
                 ref var enemyEntity = ref enemyFilter.GetEntity(item);
-                if (enemyEntity.Has<InAttackMarkerComponent>()) return;
+                if (Stomp(ref enemyEntity)) continue;
+                if (enemyEntity.Has<InAttackMarkerComponent>()) continue;
                 if (Vector3.Distance(characterController.Transform.position, enemyController.transform.position) > enemyController.attackRange)
                 {
                     RunToTarget(ref enemyController, ref characterController);
@@ -71,27 +73,25 @@ namespace Client
         }
 
 
-        private bool Stomp()
+        private bool Stomp(ref EcsEntity entity)
         {
-            if (enemyFilter.IsEmpty()) return false;
-            foreach (var item in enemyFilter)
+            if (entity.Has<StompComponent>())
             {
-                ref var entity = ref enemyFilter.GetEntity(item);
-                if (entity.Has<StompComponent>())
+                if (entity.Has<InAttackMarkerComponent>())
+                    entity.Del<InAttackMarkerComponent>();
+                    
+                ref var stomp = ref entity.Get<StompComponent>();
+                if (stomp.currentDelay >= stomp.delay)
                 {
-                    ref var stomp = ref entity.Get<StompComponent>();
-                    if (stomp.currentDelay >= stomp.delay)
-                    {
-                        entity.Del<StompComponent>();
-                        entity.Get<TopDownAiComponent>().agent.isStopped = false;
-                        return false;
-                    }
-                    else
-                    {
-                        stomp.currentDelay += Time.deltaTime;
-                        entity.Get<TopDownAiComponent>().agent.isStopped = true;
-                        return true;
-                    }
+                    entity.Del<StompComponent>();
+                    entity.Get<TopDownAiComponent>().agent.isStopped = false;
+                    return false;
+                }
+                else
+                {
+                    stomp.currentDelay += Time.deltaTime;
+                    entity.Get<TopDownAiComponent>().agent.isStopped = true;
+                    return true;
                 }
             }
             return false;

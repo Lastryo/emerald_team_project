@@ -17,9 +17,6 @@ namespace Client
         {
             if (_characterFilter.IsEmpty()) return;
 
-            if (Cursor.visible)
-                Cursor.visible = false;
-
             foreach (var index in _characterFilter)
             {
                 ref var topDownComponent = ref _characterFilter.Get1(index);
@@ -33,7 +30,6 @@ namespace Client
                 {
                     ref var c = ref cursor.Get1(default);
                     c.transform.position = new Vector3(topDownComponent.FinalLookPosition.x, 2, topDownComponent.FinalLookPosition.z);
-
                 }
 
                 // if (uiAimFilter.IsEmpty()) return;

@@ -23,6 +23,7 @@ namespace Client
         public void SpawnPlayer()
         {
             if (spawnFilter.IsEmpty()) return;
+            Cursor.visible = false;
 
             foreach (var item in spawnFilter)
             {
