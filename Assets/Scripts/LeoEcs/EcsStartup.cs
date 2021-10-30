@@ -51,21 +51,18 @@ namespace Client
             _systems
             .Inject(_sceneData)
             .Add(new SceneLoadSystem())
-                .OneFrame<LoadGameEvent>()
-                .OneFrame<LoadMainMenuEvent>()
-                
             .Add(new EcsInputSystem())
             .Add(new SpawnSystem())
             .Add(new CameraFollowSystem())
             .Add(new AimSystem())
             .Add(new CrossbowBulletSystem())
+            .OneFrame<LoadGameEvent>()
+            .OneFrame<LoadMainMenuEvent>()
             .Add(new ShootSystem())
             .Add(new DamageSystem())
             .Add(new HealthSystem())
             .Add(new SimpleAiSystem())
-
-
-
+            .Add(new DeathDeleteSystem())
 
             .Add(new HPBarSystem())
 

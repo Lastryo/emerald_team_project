@@ -53,6 +53,11 @@ namespace Client
                                 if (deathScreenFilter.IsEmpty()) return;
                                 deathScreenFilter.Get1(default).deathScreen.gameObject.SetActive(true);
                             }
+
+                            if (entity.Has<TopDownAiComponent>())
+                            {
+                                entity.Get<DeathComponent>().deathTime = 5f;
+                            }
                             Debug.Log($"Умер");
                             // анимация смерти
                         }

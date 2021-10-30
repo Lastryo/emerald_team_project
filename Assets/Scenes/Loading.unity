@@ -330,6 +330,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2201486448428575535, guid: 7f94d2fbb4ea8f54584f88d374790a54,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1090
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201486448428575535, guid: 7f94d2fbb4ea8f54584f88d374790a54,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -545
+      objectReference: {fileID: 0}
     - target: {fileID: 4792360783975265601, guid: 7f94d2fbb4ea8f54584f88d374790a54,
         type: 3}
       propertyPath: m_Pivot.x
@@ -442,3 +452,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f94d2fbb4ea8f54584f88d374790a54, type: 3}
+--- !u!1 &639526389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1760670849391016405, guid: 7f94d2fbb4ea8f54584f88d374790a54,
+    type: 3}
+  m_PrefabInstance: {fileID: 639526388}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &639526390
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639526389}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: b6794983a76df9848a4d8d8e660f5293, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: b6794983a76df9848a4d8d8e660f5293, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

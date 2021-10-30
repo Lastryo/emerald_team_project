@@ -7,6 +7,7 @@ namespace Client
     {
         readonly EcsWorld _world = null;
         readonly EcsFilter<TopDownControllerComponent, FollowCameraComponent>.Exclude<DeathComponent> _characterFilter;
+        readonly EcsFilter<Cursor3DComponent> cursor;
         readonly EcsFilter<AimComponent> uiAimFilter;
         private Transform cube;
 
@@ -28,8 +29,15 @@ namespace Client
                 topDownComponent.FinalLookPosition.y = topDownComponent.Transform.position.y;
                 topDownComponent.ModelTransform.LookAt(topDownComponent.FinalLookPosition);
 
-                if (uiAimFilter.IsEmpty()) return;
-                uiAimFilter.Get1(default).rect.position = topDownComponent.InputLookDirection;
+                if (cursor.IsEmpty()) return;
+                {
+                    ref var c = ref cursor.Get1(default);
+                    c.transform.position = new Vector3(topDownComponent.FinalLookPosition.x, 2, topDownComponent.FinalLookPosition.z);
+
+                }
+
+                // if (uiAimFilter.IsEmpty()) return;
+                // uiAimFilter.Get1(default).rect.position = followCameraComponent.camera.WorldToScreenPoint(topDownComponent.FinalLookPosition);
             }
         }
 

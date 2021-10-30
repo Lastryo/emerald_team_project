@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Leopotam.Ecs;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace Client
 {
@@ -43,7 +44,7 @@ namespace Client
                 ref var spawnComponent = ref enemySpawnFilter.Get1(item);
                 if (spawnComponent.currentTime >= spawnComponent.SpawnInterval)
                 {
-                    ReactiveSpawn(spawnComponent.Prefab, spawnComponent.Point.transform.position);
+                    ReactiveSpawn(spawnComponent.SpawnData.reference, spawnComponent.Point.transform.position);
                     spawnComponent.currentTime = 0;
                 }
                 else
@@ -60,9 +61,9 @@ namespace Client
             GameObject.Instantiate(prefab, position, Quaternion.identity);
         }
 
-        public void ReactiveSpawn(GameObject prefab, Vector3 position)
+        public void ReactiveSpawn(AssetReference reference, Vector3 position)
         {
-            GameObject.Instantiate(prefab, position, Quaternion.identity);
+            reference.InstantiateAsync(position, Quaternion.identity);
         }
     }
 

@@ -55,6 +55,12 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: Entity
+      Entry: 7
+      Data: Leopotam.Ecs.EcsEntity, Leopotam.Ecs
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: component
       Entry: 7
       Data: 0|Client.IComponent[], Assembly-CSharp

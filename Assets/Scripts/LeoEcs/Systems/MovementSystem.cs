@@ -6,7 +6,7 @@ sealed class MovementSystem : IEcsRunSystem
 {
     // auto-injected fields.
     readonly EcsWorld _world = null;
-    private EcsFilter<TopDownControllerComponent> characterFilter = null;
+    private EcsFilter<TopDownControllerComponent>.Exclude<DeathComponent> characterFilter = null;
     private int animationMoveId = Animator.StringToHash("Move");
     private int animationMoveXId = Animator.StringToHash("X");
     private int animationMoveYId = Animator.StringToHash("Y");

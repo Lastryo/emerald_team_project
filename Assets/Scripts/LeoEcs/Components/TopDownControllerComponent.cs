@@ -19,6 +19,7 @@ namespace Client
         public Collider Collider;
         public Transform ModelTransform;
         public float MoveSpeed;
+        public float Range;
 
         [HideInInspector]
         public Vector2 InputMoveDirection;

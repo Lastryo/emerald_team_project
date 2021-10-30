@@ -21,6 +21,22 @@ MonoBehaviour:
     m_Address: Character
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 212a386859ec4b642979df44f6dc152d
+    m_Address: Enemy_Bear
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e91a1121fe307c44e884f20376de7721
+    m_Address: Enemy_Demon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4ed12540b9bfe5b46b2c88273f991b19
+    m_Address: Enemy_Troll
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5ff19b49704541f4ca0e85f1b3b82f41
+    m_Address: Enemy_Werewolf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 22a198855639adb4d892bfb78be9e3c5, type: 2}
   m_SchemaSet:

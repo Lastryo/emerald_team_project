@@ -10,14 +10,30 @@ namespace Client
         readonly EcsFilter<CrossbowComponent> pointFilter = null;
         readonly EcsFilter<BulletComponent>.Exclude<BulletShootingComponent> isReadyToShootFilter = null;
         readonly EcsFilter<TopDownControllerComponent, FollowCameraComponent>.Exclude<DeathComponent> _characterFilter;
+        readonly EcsFilter<Cursor3DComponent> cursor;
         readonly EcsFilter<ChangeBulletEvent> changeBulletEvent = null;
         readonly EcsFilter<ShootEvent> shootEvent = null;
         readonly EcsFilter<ShootInputEvent> shootInputEvent = null;
 
+        readonly EcsFilter<LoadGameEvent> gameEvent = null;
+        readonly EcsFilter<LoadMainMenuEvent> mainMenuEvent = null;
+
         private bool isPuched = false;
+
+        public void Init()
+        {
+            isPuched = false;
+        }
+
+        public void LoadGameEvent()
+        {
+            if (!gameEvent.IsEmpty() || !mainMenuEvent.IsEmpty())
+                Init();
+        }
 
         public void Run()
         {
+            LoadGameEvent();
             ChangeBullet();
             AddBulletToWeapon();
             Shoot();
@@ -34,6 +50,8 @@ namespace Client
                 ref var evt = ref changeBulletEvent.Get1(item);
                 ref var entity = ref pointFilter.GetEntity(default);
                 pointFilter.Get1(default).currentType = evt.Type;
+                if (!cursor.IsEmpty())
+                    cursor.Get1(default).SetType(evt.Type);
                 GameObject.Destroy(isReadyToShootFilter.Get1(default).transform.gameObject);
                 isReadyToShootFilter.GetEntity(default).Destroy();
                 CreateBullet(default);
@@ -97,7 +115,8 @@ namespace Client
                     var heading = topDownComponent.FinalLookPosition - topDownComponent.Transform.position;
                     var dir = heading.normalized;
                     bulletComponent.direction = dir;
-                    bulletComponent.transform.rotation = projectilePointer.ProjectilePointer.rotation;
+                    if (!cursor.IsEmpty())
+                        bulletComponent.transform.LookAt(cursor.Get1(default).transform);
                     animationComponent.animator.SetTrigger("Shoot");
                     pointEntity.Get<CrossbowComponent>().animation.SetTrigger("Shoot");
                     isPuched = true;
@@ -124,6 +143,8 @@ namespace Client
                 isPuched = false;
             }
         }
+
+
     }
 
 }

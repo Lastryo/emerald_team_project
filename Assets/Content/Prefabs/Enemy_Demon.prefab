@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 731499034580582724}
   - component: {fileID: 7198877683894934273}
   m_Layer: 13
-  m_Name: Enemy[Demon] Variant
+  m_Name: Enemy_Demon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
